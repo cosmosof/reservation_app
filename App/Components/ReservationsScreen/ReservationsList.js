@@ -20,7 +20,7 @@ export default function ReservationList(props: Props) {
       query={RESERVATIONS}
       variables={{where: {[filter]: text}}}
     >
-      {({loading, error, data, fetchMore}) => {
+      {({loading, error, data, fetchMore, networkStatus, refetch}) => {
         const {reservations} = data;
         if (loading) {
           return (
@@ -68,6 +68,8 @@ export default function ReservationList(props: Props) {
               })
             }
             onEndThreshold={0.5}
+            onRefresh={() => refetch()}
+            refreshing={networkStatus === 4}
             renderItem={({item}) => <ListCard data={item} />}
           />
         );
