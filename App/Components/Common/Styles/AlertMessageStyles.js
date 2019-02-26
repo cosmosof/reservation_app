@@ -10,16 +10,16 @@ export default StyleSheet.create({
     alignSelf: 'center',
     alignItems: 'center',
   },
+  icon: {
+    color: Colors.steel,
+  },
   message: {
-    marginTop: 10,
-    marginHorizontal: 10,
-    textAlign: 'center',
+    color: Colors.steel,
     fontFamily: Fonts.type.base,
     fontSize: Fonts.size.regular,
     fontWeight: 'bold',
-    color: Colors.steel,
-  },
-  icon: {
-    color: Colors.steel,
+    marginTop: 10,
+    marginHorizontal: 10,
+    textAlign: 'center',
   },
 });

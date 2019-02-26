@@ -1,14 +1,15 @@
-import React from "react";
-import { Text, Platform } from "react-native";
-import PropTypes from "prop-types";
-import styles from './Styles/InputLabelStyles'
+import React from 'react';
+import {Text} from 'react-native';
+import PropTypes from 'prop-types';
 
-export default (InputLabel = ({ label, containerStyle }) => {
+import styles from './Styles/InputLabelStyles';
+
+export default (InputLabel = ({containerStyle, label}) => {
   return (
     <Text
       style={{
         ...containerStyle,
-        ...styles.container 
+        ...styles.container,
       }}
     >
       {label}
@@ -17,6 +18,6 @@ export default (InputLabel = ({ label, containerStyle }) => {
 });
 
 InputLabel.propTypes = {
+  containerStyle: PropTypes.object,
   label: PropTypes.string.isRequired,
-  containerStyle: PropTypes.object
 };

@@ -3,7 +3,6 @@ import {Colors, Fonts} from '../../../Constants';
 
 export default StyleSheet.create({
   container: {
-    padding: 30,
     borderBottomWidth: 0.5,
     borderTopWidth: 0.5,
     borderLeftWidth: 0.5,
@@ -16,32 +15,34 @@ export default StyleSheet.create({
     marginLeft: 5,
     marginRight: 5,
     marginBottom: 5,
+    padding: 30,
   },
-  value: {
-    fontSize: 14,
-    fontWeight: '600',
-    fontFamily: Platform.OS == 'ios' ? Fonts.typeIOS.condensed : Fonts.typeAndroid.condensed,
-    alignItems: 'flex-end',
-    color: Colors.darkMatBlue2,
-  },
+
   label: {
+    alignItems: 'flex-start',
+    color: Colors.darkMatBlue2,
     fontSize: 14,
     fontWeight: '400',
     fontFamily: Platform.OS == 'ios' ? Fonts.typeIOS.base : Fonts.typeAndroid.base,
-    alignItems: 'flex-start',
-    color: Colors.darkMatBlue2,
-  },
-  row: {
-    flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    backgroundColor: Colors.lighterMatBlue,
-    padding: 5,
   },
   oddRow: {
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-between',
     padding: 5,
+  },
+  row: {
+    backgroundColor: Colors.lighterMatBlue,
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    padding: 5,
+  },
+  value: {
+    alignItems: 'flex-end',
+    color: Colors.darkMatBlue2,
+    fontSize: 14,
+    fontWeight: '600',
+    fontFamily: Platform.OS == 'ios' ? Fonts.typeIOS.condensed : Fonts.typeAndroid.condensed,
   },
 });

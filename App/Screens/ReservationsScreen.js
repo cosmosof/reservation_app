@@ -4,14 +4,14 @@ import {Query} from 'react-apollo';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import Search from '../Components/ReservationsScreen/Search';
 import StickyCard from '../Components/ReservationsScreen/StickyCard';
-import StickyRow from '../Components/ReservationsScreen/StickyRow';
+import Row from '../Components/Common/Row';
 import Label from '../Components/Common/Label';
-import {RESERVATIONS} from '../API/Queries';
 import AlertMessage from '../Components/Common/AlertMessage';
 import Button from '../Components/Common/Button';
 import ListCard from '../Components/ReservationsScreen/ListCard';
 import Center from '../Components/ReservationsScreen/Center';
 import {ListFilters, Colors} from '../Constants';
+import {RESERVATIONS} from '../API/Queries';
 
 import styles from './Styles/ReservationScreenStyles';
 
@@ -31,12 +31,12 @@ export default class ReservationsScreen extends React.Component {
   };
   render() {
     const {searchText, filter} = this.state;
-    const {container, buttonStyle, pickerStyle, titleStyle, itemStyle, stickyFilter, filterLabel} = styles;
+    const {buttonStyle, container, filterLabel, itemStyle, pickerStyle, titleStyle, stickyFilter} = styles;
     const variables = searchText===''?{where: {}}:{where: {[filter]: searchText}};
     return (
       <SafeAreaView style={container}>
         <StickyCard>
-          <StickyRow>
+          <Row>
             <Search>
               {(text) => (
                 <Button
@@ -47,8 +47,8 @@ export default class ReservationsScreen extends React.Component {
                 />
               )}
             </Search>
-          </StickyRow>
-          <StickyRow style={stickyFilter}>
+          </Row>
+          <Row style={stickyFilter}>
             <Icon
               color={Colors.charcoal}
               name="filter-list"
@@ -64,15 +64,15 @@ export default class ReservationsScreen extends React.Component {
               selectedValue={filter}
               style={pickerStyle}
             >
-              {ListFilters.map((item) => (
+              {ListFilters.map(({index, name, value}) => (
                 <Picker.Item
-                  key={item.index}
-                  label={item.name}
-                  value={item.value}
+                  key={index}
+                  label={name}
+                  value={value}
                 />
               ))}
             </Picker>
-          </StickyRow>
+          </Row>
         </StickyCard>
         <Query
           query={RESERVATIONS}
@@ -80,22 +80,22 @@ export default class ReservationsScreen extends React.Component {
         >
           {({loading, error, data, fetchMore, networkStatus, refetch}) => {
             const {reservations} = data;
-            if (loading) {
-              return (
-                <Center>
-                  <AlertMessage
-                    show
-                    title="loading..."
-                  />
-                </Center>
-              );
-            }
             if (error) {
               return (
                 <Center>
                   <AlertMessage
                     show
                     title="An error occured"
+                  />
+                </Center>
+              );
+            }
+            if (loading) {
+              return (
+                <Center>
+                  <AlertMessage
+                    show
+                    title="loading..."
                   />
                 </Center>
               );
@@ -113,7 +113,7 @@ export default class ReservationsScreen extends React.Component {
             return (
               <FlatList
                 data={reservations}
-                keyExtractor={(item, index) => item.id}
+                keyExtractor={(item) => item.id}
                 onEndReached={() =>
                   fetchMore({
                     variables: {
@@ -139,6 +139,3 @@ export default class ReservationsScreen extends React.Component {
     );
   }
 }
-
-        /*where: {[filter]: searchText}*/
-//`${searchText}&&{where: {[${filter}]: ${searchText}}}:{where: {}}`

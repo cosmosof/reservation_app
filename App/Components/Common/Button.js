@@ -5,18 +5,18 @@ import {TouchableHighlight, Text} from 'react-native';
 import styles from './Styles/ButtonStyles';
 
 type Props = {
-  onPress: Function,
+  buttonStyle?: Object,
   children?: string,
   disabled?: boolean,
+  onPress: Function,
   styles?: Object,
   textStyle?: Object,
-  buttonStyle?: Object,
   title?: string,
 };
 
 export default function Button(props: Props) {
   const {container, disabledStyle, text} = styles;
-  const {buttonStyle, children, onPress, textStyle, title, disabled} = props;
+  const {buttonStyle, children, disabled, onPress, textStyle, title} = props;
 
   return (
     <TouchableHighlight

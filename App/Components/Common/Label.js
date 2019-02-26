@@ -7,22 +7,16 @@ import styles from './Styles/LabelStyles';
 
 type Props = {
   children?: string,
+  styles?: Object,
   title?: string,
   textStyle?: Object,
-  styles?: Object,
 };
 
 export default function Label(props: Props) {
-  const {textStyle, title, children} = props;
+  const {children, textStyle, title} = props;
   const {text} = styles;
 
-  return (
-    <Text
-      style={[text, textStyle]}
-    >
-      {title||children||''}
-    </Text>
-  );
+  return <Text style={[text, textStyle]}>{title || children || ''}</Text>;
 }
 
 Label.defaultProps = {

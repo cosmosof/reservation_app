@@ -23,7 +23,7 @@ export default class InputSection extends React.Component {
   }
   render() {
     const {boxShadow} = this.state;
-    const {error, label, inputStyles} = this.props;
+    const {error, inputStyles, label} = this.props;
     const {container, errorText, textInput} = styles;
     return (
       <View style={container}>

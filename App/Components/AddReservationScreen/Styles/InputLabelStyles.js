@@ -3,13 +3,13 @@ import {Colors, Fonts} from '../../../Constants';
 
 export default StyleSheet.create({
   container: {
-    fontFamily: Platform.OS == 'ios' ? Fonts.typeIOS.condensed :  Fonts.typeAndroid.condensed,
-        color: Colors.vividBlue,
-        width: 90,
-        fontSize: 14,
-        fontWeight: "500",
-        paddingTop: 10,
-        paddingBottom: 10,
-        paddingRight: 10
-  }
+    color: Colors.vividBlue,
+    fontSize: 14,
+    fontWeight: '500',
+    fontFamily: Platform.OS == 'ios' ? Fonts.typeIOS.condensed : Fonts.typeAndroid.condensed,
+    paddingTop: 10,
+    paddingBottom: 10,
+    paddingRight: 10,
+    width: 90,
+  },
 });

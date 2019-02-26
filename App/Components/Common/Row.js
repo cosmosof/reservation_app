@@ -3,10 +3,10 @@
 import * as React from 'react';
 import {View} from 'react-native';
 
-import styles from './Styles/StickyRowStyles';
+import styles from './Styles/RowStyles';
 
-type Props = { style?: Object, children?: React.Node };
+type Props = { children?: React.Node, style?: Object };
 
-export default function StickyRow(props: Props) {
+export default function Row(props: Props) {
   return <View style={[styles.container, props.style]}>{props.children}</View>;
 }

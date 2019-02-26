@@ -4,7 +4,7 @@ import {Fonts} from '../../../Constants';
 
 export default StyleSheet.create({
   text: {
-    textAlign: 'center',
     fontFamily: Platform.OS == 'ios' ? Fonts.typeIOS.condensed : Fonts.typeAndroid.condensed,
+    textAlign: 'center',
   },
 });

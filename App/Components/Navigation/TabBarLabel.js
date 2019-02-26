@@ -18,11 +18,7 @@ export default function TabBarLabel(props: Props) {
   const {text} = styles;
 
   return (
-    <Text
-      style={[text, textStyle, {color: props.focused ? Colors.vividBlue : Colors.tabIconDefault}]}
-    >
-      {title}
-    </Text>
+    <Text style={[text, textStyle, {color: props.focused ? Colors.vividBlue : Colors.tabIconDefault}]}>{title}</Text>
   );
 }
 

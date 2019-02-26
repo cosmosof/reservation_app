@@ -1,20 +1,19 @@
 import React from 'react';
-import {Text, View, KeyboardAvoidingView, Platform, SafeAreaView} from 'react-native';
+import {KeyboardAvoidingView, Platform, SafeAreaView, Text, View} from 'react-native';
 import moment from 'moment';
 import {Formik} from 'formik';
 import * as Yup from 'yup';
 import {Mutation} from 'react-apollo';
 import DatePicker from 'react-native-datepicker';
-import {CREATE_RESERVATIONS} from '../API/Mutations';
-import Label from '../Components/Common/Label';
 import InputLabel from '../Components/AddReservationScreen/InputLabel';
 import Input from '../Components/AddReservationScreen/Input';
 import AlertMessage from '../Components/Common/AlertMessage';
 import Button from '../Components/Common/Button';
+import Row from '../Components/Common/Row';
+import Label from '../Components/Common/Label';
+import {CREATE_RESERVATIONS} from '../API/Mutations';
 
 import styles from './Styles/AddReservationStyles';
-
-const minDate = moment().toISOString();
 
 export default class AddReservationScreen extends React.Component {
   static navigationOptions = {
@@ -25,11 +24,12 @@ export default class AddReservationScreen extends React.Component {
   };
 
   state = {
-    success: false,
     error: false,
+    success: false,
+    minDate: moment().toISOString(),
   };
 
-  handleNewRequest = (el) => {
+  handleButtonAction = (el) => {
     switch (true) {
     case el === 'success':
       this.setState(({success}) => ({
@@ -45,23 +45,29 @@ export default class AddReservationScreen extends React.Component {
       break;
     }
   };
+  handleOnCompleted = () => {
+    this.setState(({success}) => ({success: !success}));
+  };
+  handleOnError = () => {
+    this.setState(({error}) => ({error: !error}));
+  };
   render() {
     const {
       border,
-      container,
-      KeyboardAvoidingViewContainer,
       buttonTitleStyle,
-      inputRow,
       button,
+      container,
       dateInput,
       disabled,
-      placeholderText,
       dateText,
       errorText,
       inputStyle,
       inputColumn,
+      KeyboardAvoidingViewContainer,
+      placeholderText,
+      row,
     } = styles;
-    const {success, error} = this.state;
+    const {error, minDate, success} = this.state;
 
     return (
       <SafeAreaView style={container}>
@@ -75,7 +81,7 @@ export default class AddReservationScreen extends React.Component {
               <AlertMessage title="An error cocured, please try again..." />
               <Button
                 buttonStyle={button}
-                onPress={() => this.handleNewRequest('error')}
+                onPress={() => this.handleButtonAction('error')}
                 textStyle={buttonTitleStyle}
                 title="Try Again"
               />
@@ -86,7 +92,7 @@ export default class AddReservationScreen extends React.Component {
               <AlertMessage title="Reservation succesfully added..." />
               <Button
                 buttonStyle={button}
-                onPress={() => this.handleNewRequest('success')}
+                onPress={() => this.handleButtonAction('success')}
                 textStyle={buttonTitleStyle}
                 title="Add Another"
               />
@@ -94,145 +100,124 @@ export default class AddReservationScreen extends React.Component {
           ) : (
             <Mutation
               mutation={CREATE_RESERVATIONS}
-              onCompleted={() =>
-                this.setState(({success}) => ({
-                  success: !success,
-                }))
-              }
-              onError={() =>
-                this.setState(({error}) => ({
-                  error: !error,
-                }))
-              }
+              onCompleted={this.handleOnCompleted}
+              onError={this.handleOnError}
             >
               {(createReservation, {data, loading}) => {
                 if (loading) return <AlertMessage title="Processing..." />;
                 return (
-                  <View>
-                    <Formik
-                      initialValues={{
-                        name: '',
-                        hotelName: '',
-                        arrivalDate: '',
-                        departureDate: '',
-                      }}
-                      onSubmit={(val) =>
-                        createReservation({
-                          variables: {
-                            data: {
-                              name: val.name,
-                              hotelName: val.hotelName,
-                              departureDate: val.arrivalDate,
-                              arrivalDate: val.departureDate,
-                            },
+                  <Formik
+                    initialValues={{
+                      name: '',
+                      arrivalDate: '',
+                      departureDate: '',
+                      hotelName: '',
+                    }}
+                    onSubmit={({name, arrivalDate, departureDate, hotelName}) =>
+                      createReservation({
+                        variables: {
+                          data: {
+                            name: name,
+                            arrivalDate: departureDate,
+                            departureDate: arrivalDate,
+                            hotelName: hotelName,
                           },
-                        })
-                      }
-                      render={({
-                        values,
-                        handleSubmit,
-                        setFieldValue,
-                        errors,
-                        touched,
-                        setFieldTouched,
-                        isValid,
-                        isSubmitting,
-                      }) => {
-                        return (
-                          <React.Fragment>
-                            <View style={inputRow}>
-                              <InputLabel
-                                containerStyle={{marginLeft: 10}}
-                                label="Name"
+                        },
+                      })
+                    }
+                    render={({
+                      errors,
+                      isValid,
+                      isSubmitting,
+                      handleSubmit,
+                      setFieldValue,
+                      setFieldTouched,
+                      touched,
+                      values,
+                    }) => {
+                      return (
+                        <React.Fragment>
+                          <Row style={row}>
+                            <InputLabel label="Name" />
+                            <Input
+                              autoCapitalize="none"
+                              error={touched.name && errors.name}
+                              inputStyles={inputStyle}
+                              label="enter a name"
+                              name="name"
+                              onChange={setFieldValue}
+                              onTouch={setFieldTouched}
+                              value={values.name}
+                            />
+                          </Row>
+                          <Row style={row}>
+                            <InputLabel label="Hotel Name" />
+                            <Input
+                              autoCapitalize="none"
+                              error={touched.hotelName && errors.hotelName}
+                              inputStyles={inputStyle}
+                              label="enter a hotel name"
+                              name="hotelName"
+                              onChange={setFieldValue}
+                              onTouch={setFieldTouched}
+                              value={values.hotelName}
+                            />
+                          </Row>
+                          <Row style={row}>
+                            <InputLabel label="Arrival Date" />
+                            <View style={inputColumn}>
+                              <DatePicker
+                                cancelBtnText="Cancel"
+                                confirmBtnText="Confirm"
+                                customStyles={{
+                                  dateInput: {...dateInput},
+                                  dateText: {...dateText},
+                                  placeholderText: {...placeholderText},
+                                }}
+                                date={values.arrivalDate}
+                                minDate={minDate}
+                                mode="date"
+                                onDateChange={(date) => setFieldValue('arrivalDate', date)}
+                                onOpenModal={() => setFieldTouched('arrivalDate', true)}
+                                placeholder="select a arrival date"
+                                showIcon={false}
+                                style={[inputStyle, border]}
                               />
-                              <Input
-                                autoCapitalize="none"
-                                error={touched.name && errors.name}
-                                inputStyles={inputStyle}
-                                label="enter a name"
-                                name="name"
-                                onChange={setFieldValue}
-                                onTouch={setFieldTouched}
-                                value={values.name}
-                              />
-                            </View>
-                            <View style={inputRow}>
-                              <InputLabel
-                                containerStyle={{marginLeft: 10}}
-                                label="Hotel Name"
-                              />
-                              <Input
-                                autoCapitalize="none"
-                                error={touched.hotelName && errors.hotelName}
-                                inputStyles={inputStyle}
-                                label="enter a hotel name"
-                                name="hotelName"
-                                onChange={setFieldValue}
-                                onTouch={setFieldTouched}
-                                value={values.hotelName}
-                              />
-                            </View>
-                            <View style={inputRow}>
-                              <InputLabel
-                                containerStyle={{marginLeft: 10}}
-                                label="Arrival Date"
-                              />
-                              <View style={inputColumn}>
-                                <DatePicker
-                                  cancelBtnText="Cancel"
-                                  confirmBtnText="Confirm"
-                                  customStyles={{
-                                    dateInput: {...dateInput},
-                                    placeholderText: {...placeholderText},
-                                    dateText: {...dateText},
-                                  }}
-                                  date={values.arrivalDate}
-                                  minDate={minDate}
-                                  mode="date"
-                                  onDateChange={(date) => setFieldValue('arrivalDate', date)}
-                                  onOpenModal={() => setFieldTouched('arrivalDate', true)}
-                                  placeholder="select a arrival date"
-                                  showIcon={false}
-                                  style={[inputStyle, border]}
-                                />
-                                 {touched.arrivalDate && errors.arrivalDate && (
+                              {touched.arrivalDate && errors.arrivalDate && (
                                 <Text style={errorText}>Arrival date is required</Text>
                               )}
-                              </View>
-                             
                             </View>
-                            <View style={inputRow}>
-                                <InputLabel
-                                  containerStyle={{marginLeft: 10}}
-                                  label="Departure Date"
-                                />
-                                <View style={inputColumn}>
-                                  <DatePicker
-                                    cancelBtnText="Cancel"
-                                    confirmBtnText="Confirm"
-                                    customStyles={{
-                                      dateInput: {...dateInput},
-                                      disabled: {...disabled},
-                                      placeholderText: {...placeholderText},
-                                      dateText: {...dateText},
-                                    }}
-                                    date={values.departureDate}
-                                    disabled={!values.arrivalDate}
-                                    minDate={moment(values.arrivalDate)
-                                      .add(1, 'd')
-                                      .toISOString()}
-                                    mode="date"
-                                    onDateChange={(date) => setFieldValue('departureDate', date)}
-                                    onOpenModal={() => setFieldTouched('departureDate', true)}
-                                    placeholder="select a departure date"
-                                    showIcon={false}
-                                    style={[inputStyle, border]}
-                                  />
-                                  {touched.departureDate && errors.departureDate && (
-                                    <Text style={errorText}>Departure date is required</Text>
-                                  )}
-                                </View>
+                          </Row>
+                          <Row style={row}>
+                            <InputLabel label="Departure Date" />
+                            <View style={inputColumn}>
+                              <DatePicker
+                                cancelBtnText="Cancel"
+                                confirmBtnText="Confirm"
+                                customStyles={{
+                                  dateInput: {...dateInput},
+                                  disabled: {...disabled},
+                                  placeholderText: {...placeholderText},
+                                  dateText: {...dateText},
+                                }}
+                                date={values.departureDate}
+                                disabled={!values.arrivalDate}
+                                minDate={moment(values.arrivalDate)
+                                  .add(1, 'd')
+                                  .toISOString()}
+                                mode="date"
+                                onDateChange={(date) => setFieldValue('departureDate', date)}
+                                onOpenModal={() => setFieldTouched('departureDate', true)}
+                                placeholder="select a departure date"
+                                showIcon={false}
+                                style={[inputStyle, border]}
+                              />
+                              {touched.departureDate && errors.departureDate && (
+                                <Text style={errorText}>Departure date is required</Text>
+                              )}
                             </View>
+                          </Row>
+                          <Row style={row}>
                             <Button
                               buttonStyle={button}
                               disabled={!isValid || isSubmitting}
@@ -240,17 +225,17 @@ export default class AddReservationScreen extends React.Component {
                               textStyle={buttonTitleStyle}
                               title="Add"
                             />
-                          </React.Fragment>
-                        );
-                      }}
-                      validationSchema={Yup.object().shape({
-                        name: Yup.string().required('Name is required'),
-                        hotelName: Yup.string().required('Hotel name is required'),
-                        arrivalDate: Yup.string().required('Arrival date is required'),
-                        departureDate: Yup.string().required('Departure date is required'),
-                      })}
-                    />
-                  </View>
+                          </Row>
+                        </React.Fragment>
+                      );
+                    }}
+                    validationSchema={Yup.object().shape({
+                      name: Yup.string().required('Name is required'),
+                      arrivalDate: Yup.string().required('Arrival date is required'),
+                      departureDate: Yup.string().required('Departure date is required'),
+                      hotelName: Yup.string().required('Hotel name is required'),
+                    })}
+                  />
                 );
               }}
             </Mutation>

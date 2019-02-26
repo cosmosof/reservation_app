@@ -3,10 +3,10 @@ import {Colors} from '../../../Constants';
 
 export default StyleSheet.create({
   container: {
-    flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center',
     backgroundColor: Colors.snow,
-    margin: 5
+    flexDirection: 'row',
+    justifyContent: 'center',
+    margin: 5,
   },
 });

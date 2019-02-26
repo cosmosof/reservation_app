@@ -2,45 +2,45 @@ import {StyleSheet, Platform} from 'react-native';
 import {Colors, Fonts} from '../../Constants';
 
 export default StyleSheet.create({
+  buttonStyle: {
+    backgroundColor: Colors.vividBlue,
+    borderRadius: 4,
+    marginRight: 10,
+    width: 100,
+  },
   container: {
-    flex: 1,
     backgroundColor: Colors.extraLightGray,
+    flex: 1,
   },
   itemStyle: {
     borderTopColor: 'transparent',
-    height: 36,
     color: Colors.charcoal,
     fontSize: 14,
     fontFamily: Platform.OS == 'ios' ? Fonts.typeIOS.base : Fonts.typeAndroid.base,
-  },
-  titleStyle: {
-    fontFamily: Platform.OS == 'ios' ? Fonts.typeIOS.condensed : Fonts.typeAndroid.condensed,
-    fontSize: 16,
-  },
-  buttonStyle: {
-    backgroundColor: Colors.vividBlue,
-    width: 100,
-    marginRight: 10,
-    borderRadius: 4
-  },
-  pickerStyle: {
-    width: 200,
-    backgroundColor: Colors.extraLightGray,
-    marginLeft: 10,
-    borderRadius: 4,
-  },
-  stickyFilter: {
-    marginBottom: 10,
+    height: 36,
   },
   filterLabel: {
-    marginLeft: 10,
     color: Colors.charcoal,
+    marginLeft: 10,
   },
   navbarHeader: {
-    paddingLeft: Platform.OS == 'ios' ? 0 : 10,
     color: Colors.darkMatBlue2,
     fontSize: 18,
     fontWeight: '600',
     fontFamily: Platform.OS == 'ios' ? Fonts.typeIOS.condensed : Fonts.typeAndroid.condensed,
+    paddingLeft: Platform.OS == 'ios' ? 0 : 10,
+  },
+  pickerStyle: {
+    backgroundColor: Colors.extraLightGray,
+    borderRadius: 4,
+    marginLeft: 10,
+    width: 200,
+  },
+  stickyFilter: {
+    marginBottom: 10,
+  },
+  titleStyle: {
+    fontFamily: Platform.OS == 'ios' ? Fonts.typeIOS.condensed : Fonts.typeAndroid.condensed,
+    fontSize: 16,
   },
 });
