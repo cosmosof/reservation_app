@@ -37,6 +37,7 @@ export default StyleSheet.create({
     color: Colors.charcoal,
   },
   navbarHeader: {
+    paddingLeft: Platform.OS == 'ios' ? 0 : 10,
     color: Colors.darkMatBlue2,
     fontSize: 18,
     fontWeight: '600',

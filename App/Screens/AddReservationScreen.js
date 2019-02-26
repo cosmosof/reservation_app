@@ -5,7 +5,7 @@ import {Formik} from 'formik';
 import * as Yup from 'yup';
 import {Mutation} from 'react-apollo';
 import DatePicker from 'react-native-datepicker';
-import {CREATE_RESERVATIONS} from '../Api/Mutations';
+import {CREATE_RESERVATIONS} from '../API/Mutations';
 import Label from '../Components/Common/Label';
 import InputLabel from '../Components/AddReservationScreen/InputLabel';
 import Input from '../Components/AddReservationScreen/Input';

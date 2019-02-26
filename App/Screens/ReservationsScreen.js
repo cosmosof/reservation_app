@@ -6,7 +6,7 @@ import Search from '../Components/ReservationsScreen/Search';
 import StickyCard from '../Components/ReservationsScreen/StickyCard';
 import StickyRow from '../Components/ReservationsScreen/StickyRow';
 import Label from '../Components/Common/Label';
-import {RESERVATIONS} from '../Api/Queries';
+import {RESERVATIONS} from '../API/Queries';
 import AlertMessage from '../Components/Common/AlertMessage';
 import Button from '../Components/Common/Button';
 import ListCard from '../Components/ReservationsScreen/ListCard';
@@ -20,7 +20,7 @@ export default class ReservationsScreen extends React.Component {
     headerTitle: <Label
       textStyle={styles.navbarHeader}
       title="Reservations"
-                 />,
+    />,
   };
   state = {filter: 'name', searchText: ''};
   handleFilter = (filter) => {

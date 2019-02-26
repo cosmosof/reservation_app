@@ -22,7 +22,7 @@ export default StyleSheet.create({
     backgroundColor: Colors.extraLightGray,
     justifyContent: 'center',
     alignItems: 'center',
-    borderColor: 'gray',
+    borderColor: Colors.steel,
     borderWidth: StyleSheet.hairlineWidth,
     borderRadius: 4,
     height: 36,

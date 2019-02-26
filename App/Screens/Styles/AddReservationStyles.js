@@ -1,8 +1,7 @@
 import {StyleSheet, Platform} from 'react-native';
-import {Colors, Fonts, ApplicationStyles} from '../../Constants';
+import {Colors, Fonts} from '../../Constants';
 
 export default StyleSheet.create({
-  ...ApplicationStyles.navbarHeader,
   border: {
     borderWidth: StyleSheet.hairlineWidth,
     borderColor: Colors.steel,
@@ -65,6 +64,7 @@ export default StyleSheet.create({
     textAlign: 'left',
   },
   navbarHeader: {
+    paddingLeft: Platform.OS == 'ios' ? 0 : 10,
     color: Colors.darkMatBlue2,
     fontSize: 18,
     fontWeight: '600',

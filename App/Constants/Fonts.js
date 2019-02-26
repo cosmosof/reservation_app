@@ -2,11 +2,11 @@ const type = {
   base: 'Avenir-Book',
   bold: 'Avenir-Black',
   emphasis: 'HelveticaNeue-Italic',
-}
+};
 const typeAndroid = {
   base: 'sans-serif',
   condensed: 'sans-serif-condensed',
-}
+};
 const typeIOS = {
   base: 'AvenirNext-Regular',
   bold: 'Avenir-Black',
@@ -17,7 +17,7 @@ const typeIOS = {
   cbold: 'AvenirNextCondensed-Bold',
   light: 'AvenirNextCondensed-UltraLight',
   papyrusCondensed: 'Papyrus-Condensed',
-}
+};
 const size = {
   h1: 38,
   h2: 34,
@@ -30,7 +30,7 @@ const size = {
   medium: 14,
   small: 12,
   tiny: 8.5,
-}
+};
 
 const style = {
   h1: {
@@ -65,7 +65,7 @@ const style = {
     fontFamily: type.base,
     fontSize: size.medium,
   },
-}
+};
 
 export default {
   type,
@@ -73,4 +73,4 @@ export default {
   style,
   typeAndroid,
   typeIOS,
-}
+};

@@ -9,7 +9,11 @@ export default [
     name: 'in guest names',
     value: 'name_contains',
   },
-  {index: 3, name: 'name starts with', value: 'name_starts_with'},
+  {
+    index: 3,
+    name: 'name starts with',
+    value: 'name_starts_with',
+  },
   {
     index: 4,
     name: 'hotel name',
