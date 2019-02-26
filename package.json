@@ -4,13 +4,19 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
+    "clean": "rm -rf $TMPDIR/react-* && watchman watch-del-all && npm cache clean --force",
+    "clean:android": "cd android/ && ./gradlew clean && cd .. && react-native run-android",
+    "newclear": "rm -rf $TMPDIR/react-* && watchman watch-del-all && rm -rf ios/build && rm -rf node_modules/ && npm cache clean --force && npm i",
+    "test:watch": "jest --watch",
+    "updateSnapshot": "jest --updateSnapshot",
+    "coverage": "jest --coverage && open coverage/lcov-report/index.html || xdg-open coverage/lcov-report/index.html",
     "lint": "eslint app",
     "pretty": "prettier --semi false --print-width 100 --single-quote --trailing-comma all --write \"app/**/*.js\"",
     "precommit": "lint-staged && npm test",
     "flow": "flow",
     "flow-stop": "flow stop",
     "test:unit": "jest",
-    "test": "npm run lint && npm run flow && jest"
+    "test": "eslint app && flow && jest"
   },
   "lint-staged": {
     "*.js": [

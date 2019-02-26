@@ -1,16 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1551143849149" clover="3.2.0">
-  <project timestamp="1551143849149" name="All files">
+<coverage generated="1551203025857" clover="3.2.0">
+  <project timestamp="1551203025858" name="All files">
     <metrics statements="50" coveredstatements="49" conditionals="12" coveredconditionals="6" methods="10" coveredmethods="4" elements="72" coveredelements="59" complexity="0" loc="50" ncloc="50" packages="4" files="11" classes="11"/>
-    <package name="ReservationApp">
-      <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="assetsTransformer.js" path="/Users/mustafa/Desktop/back_ups/reactN/2019-RN/ReservationApp/assetsTransformer.js">
-        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="3" count="0" type="stmt"/>
-      </file>
-    </package>
-    <package name="ReservationApp.App.Components.Navigation">
+    <package name="App.Components.Navigation">
       <metrics statements="9" coveredstatements="9" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
       <file name="TabBarLabel.js" path="/Users/mustafa/Desktop/back_ups/reactN/2019-RN/ReservationApp/App/Components/Navigation/TabBarLabel.js">
         <metrics statements="9" coveredstatements="9" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
@@ -25,7 +17,7 @@
         <line num="29" count="1" type="stmt"/>
       </file>
     </package>
-    <package name="ReservationApp.App.Components.Navigation.Styles">
+    <package name="App.Components.Navigation.Styles">
       <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="1" methods="0" coveredmethods="0"/>
       <file name="TabBarLabelStyles.js" path="/Users/mustafa/Desktop/back_ups/reactN/2019-RN/ReservationApp/App/Components/Navigation/Styles/TabBarLabelStyles.js">
         <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="1" methods="0" coveredmethods="0"/>
@@ -35,7 +27,7 @@
         <line num="8" count="1" type="cond" truecount="1" falsecount="1"/>
       </file>
     </package>
-    <package name="ReservationApp.App.Constants">
+    <package name="App.Constants">
       <metrics statements="35" coveredstatements="35" conditionals="8" coveredconditionals="4" methods="8" coveredmethods="3"/>
       <file name="ApplicationStyles.js" path="/Users/mustafa/Desktop/back_ups/reactN/2019-RN/ReservationApp/App/Constants/ApplicationStyles.js">
         <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="1" methods="0" coveredmethods="0"/>
@@ -70,7 +62,7 @@
       <file name="ListFilters.js" path="/Users/mustafa/Desktop/back_ups/reactN/2019-RN/ReservationApp/App/Constants/ListFilters.js">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
-        <line num="36" count="1" type="stmt"/>
+        <line num="40" count="1" type="stmt"/>
       </file>
       <file name="Metrics.js" path="/Users/mustafa/Desktop/back_ups/reactN/2019-RN/ReservationApp/App/Constants/Metrics.js">
         <metrics statements="4" coveredstatements="4" conditionals="6" coveredconditionals="3" methods="0" coveredmethods="0"/>
@@ -95,6 +87,14 @@
         <line num="5" count="1" type="stmt"/>
         <line num="6" count="1" type="stmt"/>
         <line num="7" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="jest">
+      <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="assetsTransformer.js" path="/Users/mustafa/Desktop/back_ups/reactN/2019-RN/ReservationApp/jest/assetsTransformer.js">
+        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
       </file>
     </package>
   </project>
