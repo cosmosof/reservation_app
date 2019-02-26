@@ -4,13 +4,13 @@ import moment from 'moment';
 import {Formik} from 'formik';
 import * as Yup from 'yup';
 import {Mutation} from 'react-apollo';
-import {Button} from 'react-native-elements';
 import DatePicker from 'react-native-datepicker';
 import {CREATE_RESERVATIONS} from '../Api/Mutations';
 import Label from '../Components/Common/Label';
 import InputLabel from '../Components/AddReservationScreen/InputLabel';
-import InputSection from '../Components/AddReservationScreen/InputSection';
+import Input from '../Components/AddReservationScreen/Input';
 import AlertMessage from '../Components/Common/AlertMessage';
+import Button from '../Components/Common/Button';
 
 import styles from './Styles/AddReservationStyles';
 
@@ -18,7 +18,10 @@ const minDate = moment().toISOString();
 
 export default class AddReservationScreen extends React.Component {
   static navigationOptions = {
-    headerTitle: <Label title="Add New Reservations" textStyle={styles.navbarHeader} />,
+    headerTitle: <Label
+      textStyle={styles.navbarHeader}
+      title="Add New Reservations"
+                 />,
   };
 
   state = {
@@ -44,6 +47,7 @@ export default class AddReservationScreen extends React.Component {
   };
   render() {
     const {
+      border,
       container,
       KeyboardAvoidingViewContainer,
       buttonTitleStyle,
@@ -54,7 +58,8 @@ export default class AddReservationScreen extends React.Component {
       placeholderText,
       dateText,
       errorText,
-      buttonbackgroundColor,
+      inputStyle,
+      inputColumn,
     } = styles;
     const {success, error} = this.state;
 
@@ -69,11 +74,10 @@ export default class AddReservationScreen extends React.Component {
             <View>
               <AlertMessage title="An error cocured, please try again..." />
               <Button
-                backgroundColor={buttonbackgroundColor}
                 buttonStyle={button}
                 onPress={() => this.handleNewRequest('error')}
+                textStyle={buttonTitleStyle}
                 title="Try Again"
-                titleStyle={buttonTitleStyle}
               />
             </View>
           )}
@@ -81,11 +85,10 @@ export default class AddReservationScreen extends React.Component {
             <View>
               <AlertMessage title="Reservation succesfully added..." />
               <Button
-                backgroundColor={buttonbackgroundColor}
                 buttonStyle={button}
                 onPress={() => this.handleNewRequest('success')}
+                textStyle={buttonTitleStyle}
                 title="Add Another"
-                titleStyle={buttonTitleStyle}
               />
             </View>
           ) : (
@@ -142,11 +145,10 @@ export default class AddReservationScreen extends React.Component {
                                 containerStyle={{marginLeft: 10}}
                                 label="Name"
                               />
-                              <InputSection
+                              <Input
                                 autoCapitalize="none"
-                                containerStyle={{width: 220}}
                                 error={touched.name && errors.name}
-                                inputContainerStyle={{height: 40}}
+                                inputStyles={inputStyle}
                                 label="enter a name"
                                 name="name"
                                 onChange={setFieldValue}
@@ -159,11 +161,10 @@ export default class AddReservationScreen extends React.Component {
                                 containerStyle={{marginLeft: 10}}
                                 label="Hotel Name"
                               />
-                              <InputSection
+                              <Input
                                 autoCapitalize="none"
-                                containerStyle={{width: 220}}
                                 error={touched.hotelName && errors.hotelName}
-                                inputContainerStyle={{height: 40}}
+                                inputStyles={inputStyle}
                                 label="enter a hotel name"
                                 name="hotelName"
                                 onChange={setFieldValue}
@@ -176,65 +177,68 @@ export default class AddReservationScreen extends React.Component {
                                 containerStyle={{marginLeft: 10}}
                                 label="Arrival Date"
                               />
-                              <DatePicker
-                                cancelBtnText="Cancel"
-                                confirmBtnText="Confirm"
-                                customStyles={{
-                                  dateInput: {...dateInput},
-                                  placeholderText: {...placeholderText},
-                                  dateText: {...dateText},
-                                }}
-                                date={values.arrivalDate}
-                                minDate={minDate}
-                                mode="date"
-                                onDateChange={(date) => setFieldValue('arrivalDate', date)}
-                                onOpenModal={() => setFieldTouched('arrivalDate', true)}
-                                placeholder="select a arrival date"
-                                showIcon={false}
-                                style={{width: 220}}
-                              />
+                              <View style={inputColumn}>
+                                <DatePicker
+                                  cancelBtnText="Cancel"
+                                  confirmBtnText="Confirm"
+                                  customStyles={{
+                                    dateInput: {...dateInput},
+                                    placeholderText: {...placeholderText},
+                                    dateText: {...dateText},
+                                  }}
+                                  date={values.arrivalDate}
+                                  minDate={minDate}
+                                  mode="date"
+                                  onDateChange={(date) => setFieldValue('arrivalDate', date)}
+                                  onOpenModal={() => setFieldTouched('arrivalDate', true)}
+                                  placeholder="select a arrival date"
+                                  showIcon={false}
+                                  style={[inputStyle, border]}
+                                />
+                                 {touched.arrivalDate && errors.arrivalDate && (
+                                <Text style={errorText}>Arrival date is required</Text>
+                              )}
+                              </View>
+                             
                             </View>
-                            {touched.arrivalDate && errors.arrivalDate && (
-                              <Text style={errorText}>Arrival date is required</Text>
-                            )}
                             <View style={inputRow}>
-                              <InputLabel
-                                containerStyle={{marginLeft: 10}}
-                                label="Departure Date"
-                              />
-                              <DatePicker
-                                cancelBtnText="Cancel"
-                                confirmBtnText="Confirm"
-                                customStyles={{
-                                  dateInput: {...dateInput},
-                                  disabled: {...disabled},
-                                  placeholderText: {...placeholderText},
-                                  dateText: {...dateText},
-                                }}
-                                date={values.departureDate}
-                                disabled={!values.arrivalDate}
-                                minDate={moment(values.arrivalDate)
-                                  .add(1, 'd')
-                                  .toISOString()}
-                                mode="date"
-                                onDateChange={(date) => setFieldValue('departureDate', date)}
-                                onOpenModal={() => setFieldTouched('departureDate', true)}
-                                placeholder="select a departure date"
-                                showIcon={false}
-                                style={{width: 220, height: 36}}
-                              />
+                                <InputLabel
+                                  containerStyle={{marginLeft: 10}}
+                                  label="Departure Date"
+                                />
+                                <View style={inputColumn}>
+                                  <DatePicker
+                                    cancelBtnText="Cancel"
+                                    confirmBtnText="Confirm"
+                                    customStyles={{
+                                      dateInput: {...dateInput},
+                                      disabled: {...disabled},
+                                      placeholderText: {...placeholderText},
+                                      dateText: {...dateText},
+                                    }}
+                                    date={values.departureDate}
+                                    disabled={!values.arrivalDate}
+                                    minDate={moment(values.arrivalDate)
+                                      .add(1, 'd')
+                                      .toISOString()}
+                                    mode="date"
+                                    onDateChange={(date) => setFieldValue('departureDate', date)}
+                                    onOpenModal={() => setFieldTouched('departureDate', true)}
+                                    placeholder="select a departure date"
+                                    showIcon={false}
+                                    style={[inputStyle, border]}
+                                  />
+                                  {touched.departureDate && errors.departureDate && (
+                                    <Text style={errorText}>Departure date is required</Text>
+                                  )}
+                                </View>
                             </View>
-                            {touched.departureDate && errors.departureDate && (
-                              <Text style={errorText}>Departure date is required</Text>
-                            )}
                             <Button
-                              backgroundColor={buttonbackgroundColor}
                               buttonStyle={button}
                               disabled={!isValid || isSubmitting}
-                              loading={isSubmitting}
                               onPress={handleSubmit}
+                              textStyle={buttonTitleStyle}
                               title="Add"
-                              titleStyle={buttonTitleStyle}
                             />
                           </React.Fragment>
                         );

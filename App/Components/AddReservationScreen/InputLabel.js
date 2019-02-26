@@ -1,7 +1,7 @@
 import React from "react";
 import { Text, Platform } from "react-native";
 import PropTypes from "prop-types";
-import styles from './Styles/InputLabel'
+import styles from './Styles/InputLabelStyles'
 
 export default (InputLabel = ({ label, containerStyle }) => {
   return (

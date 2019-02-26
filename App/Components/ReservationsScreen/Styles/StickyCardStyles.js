@@ -7,5 +7,7 @@ export default StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: Colors.snow,
+    marginBottom: 5,
+    paddingTop: 5,
   },
 });

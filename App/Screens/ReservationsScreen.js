@@ -1,17 +1,17 @@
 import React from 'react';
 import {Picker, SafeAreaView, FlatList} from 'react-native';
-import {Button} from 'react-native-elements';
 import {Query} from 'react-apollo';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import Search from '../Components/ReservationsScreen/Search';
 import StickyCard from '../Components/ReservationsScreen/StickyCard';
 import StickyRow from '../Components/ReservationsScreen/StickyRow';
 import Label from '../Components/Common/Label';
-import {ListFilters, Colors} from '../Constants';
 import {RESERVATIONS} from '../Api/Queries';
 import AlertMessage from '../Components/Common/AlertMessage';
+import Button from '../Components/Common/Button';
 import ListCard from '../Components/ReservationsScreen/ListCard';
 import Center from '../Components/ReservationsScreen/Center';
+import {ListFilters, Colors} from '../Constants';
 
 import styles from './Styles/ReservationScreenStyles';
 
@@ -22,37 +22,28 @@ export default class ReservationsScreen extends React.Component {
       title="Reservations"
                  />,
   };
-  state = {filter: 'name'};
+  state = {filter: 'name', searchText: ''};
   handleFilter = (filter) => {
     this.setState({filter});
   };
-  handleSearch = (search) => {
-    this.setState({searchText: search});
+  handleSearch = (searchText) => {
+    this.setState({searchText});
   };
   render() {
     const {searchText, filter} = this.state;
-    const {
-      container,
-      buttonStyle,
-      pickerStyle,
-      titleStyle,
-      itemStyle,
-      buttonContainer,
-      stickyFilter,
-      filterLabel,
-    } = styles;
+    const {container, buttonStyle, pickerStyle, titleStyle, itemStyle, stickyFilter, filterLabel} = styles;
+    const variables = searchText===''?{where: {}}:{where: {[filter]: searchText}};
     return (
       <SafeAreaView style={container}>
         <StickyCard>
           <StickyRow>
             <Search>
-              {(search) => (
+              {(text) => (
                 <Button
                   buttonStyle={buttonStyle}
-                  containerStyle={buttonContainer}
-                  onPress={() => this.handleSearch(search)}
+                  onPress={() => this.handleSearch(text)}
+                  textStyle={titleStyle}
                   title="Search"
-                  titleStyle={titleStyle}
                 />
               )}
             </Search>
@@ -65,7 +56,7 @@ export default class ReservationsScreen extends React.Component {
             />
             <Label
               textStyle={filterLabel}
-              title="filter"
+              title="search"
             />
             <Picker
               itemStyle={itemStyle}
@@ -85,7 +76,7 @@ export default class ReservationsScreen extends React.Component {
         </StickyCard>
         <Query
           query={RESERVATIONS}
-          variables={{where: {[filter]: searchText}}}
+          variables={variables}
         >
           {({loading, error, data, fetchMore, networkStatus, refetch}) => {
             const {reservations} = data;
@@ -148,3 +139,6 @@ export default class ReservationsScreen extends React.Component {
     );
   }
 }
+
+        /*where: {[filter]: searchText}*/
+//`${searchText}&&{where: {[${filter}]: ${searchText}}}:{where: {}}`

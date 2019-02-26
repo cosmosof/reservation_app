@@ -1,7 +1,7 @@
 // @flow
 
 import React from 'react';
-import {Text, StyleSheet} from 'react-native';
+import {Text} from 'react-native';
 import {Colors} from '../../Constants';
 
 import styles from './Styles/TabBarLabelStyles';
@@ -9,8 +9,8 @@ import styles from './Styles/TabBarLabelStyles';
 type Props = {
   focused: boolean,
   title: string,
-  textStyle?: number | Object | Array<number>,
-  styles?: number | Object | Array<number>,
+  textStyle?: Object,
+  styles?: Object,
 };
 
 export default function TabBarLabel(props: Props) {
@@ -19,7 +19,7 @@ export default function TabBarLabel(props: Props) {
 
   return (
     <Text
-      style={StyleSheet.flatten([text, textStyle, {color: props.focused ? Colors.vividBlue : Colors.tabIconDefault}])}
+      style={[text, textStyle, {color: props.focused ? Colors.vividBlue : Colors.tabIconDefault}]}
     >
       {title}
     </Text>

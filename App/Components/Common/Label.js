@@ -1,15 +1,15 @@
 // @flow
 
 import React from 'react';
-import {Text, StyleSheet} from 'react-native';
+import {Text} from 'react-native';
 
 import styles from './Styles/LabelStyles';
 
 type Props = {
   children?: string,
   title?: string,
-  textStyle?: number | Object | Array<number>,
-  styles?: number | Object | Array<number>,
+  textStyle?: Object,
+  styles?: Object,
 };
 
 export default function Label(props: Props) {
@@ -18,7 +18,7 @@ export default function Label(props: Props) {
 
   return (
     <Text
-      style={StyleSheet.flatten([text, textStyle])}
+      style={[text, textStyle]}
     >
       {title||children||''}
     </Text>

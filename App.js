@@ -15,6 +15,7 @@ import { ApolloClient } from 'apollo-client';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { HttpLink } from 'apollo-link-http';
 import { ApolloLink, concat } from 'apollo-link';
+import { GRAPHQL_ENDPOINT } from 'react-native-dotenv'
 import { Colors}  from './App/Constants';
 
 const instructions = Platform.select({
@@ -23,7 +24,7 @@ const instructions = Platform.select({
     'Double tap R on your keyboard to reload,\n' +
     'Shake or press menu button for dev menu',
 });
-const httpLink = new HttpLink({ uri: `https://us1.prisma.sh/public-luckox-377/reservation-graphql-backend/dev` });
+const httpLink = new HttpLink({ uri: GRAPHQL_ENDPOINT});
 
 const client = new ApolloClient({
   link: concat(httpLink),

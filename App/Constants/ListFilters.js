@@ -6,7 +6,7 @@ export default [
   },
   {
     index: 1,
-    name: 'guest names include',
+    name: 'in guest names',
     value: 'name_contains',
   },
   {index: 3, name: 'name starts with', value: 'name_starts_with'},
@@ -17,7 +17,7 @@ export default [
   },
   {
     index: 5,
-    name: 'hotel names include',
+    name: 'in hotel names',
     value: 'hotelName_contains',
   },
   {

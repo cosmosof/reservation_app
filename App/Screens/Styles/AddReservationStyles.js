@@ -3,6 +3,11 @@ import {Colors, Fonts, ApplicationStyles} from '../../Constants';
 
 export default StyleSheet.create({
   ...ApplicationStyles.navbarHeader,
+  border: {
+    borderWidth: StyleSheet.hairlineWidth,
+    borderColor: Colors.steel,
+    borderRadius: 2,
+  },
   container: {
     flex: 1,
     backgroundColor: Colors.extraLightGray,
@@ -12,17 +17,24 @@ export default StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
   },
+  inputColumn:{
+    flexDirection: 'column',
+  },
   inputRow: {
     flexDirection: 'row',
     marginBottom: 10,
     justifyContent: 'center',
   },
+  inputStyle: {
+    width: 220,
+    height: 40,
+  },
   errorText: {
     color: Colors.pastelRed,
-    fontSize: 12,
+    fontSize: 14,
     fontWeight: '400',
-    paddingBottom: 10,
-    alignSelf: 'center',
+    padding: 5,
+    alignSelf: 'flex-start',
   },
   button: {
     alignSelf: 'center',
@@ -31,6 +43,7 @@ export default StyleSheet.create({
     marginBottom: 40,
     height: 40,
     width: 120,
+    borderRadius: 4,
   },
   buttonTitleStyle: {
     fontFamily: Platform.OS == 'ios' ? Fonts.typeIOS.condensed : Fonts.typeAndroid.condensed,
@@ -50,9 +63,6 @@ export default StyleSheet.create({
   dateText: {
     color: Colors.coal,
     textAlign: 'left',
-  },
-  buttonbackgroundColor: {
-    backgroundColor: Colors.vividBlue,
   },
   navbarHeader: {
     color: Colors.darkMatBlue2,

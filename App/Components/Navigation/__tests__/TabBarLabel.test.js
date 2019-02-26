@@ -1,8 +1,8 @@
 import React from 'react';
 import {StyleSheet} from 'react-native';
 import {shallow} from 'enzyme';
-import TabBarLabel from './TabBarLabel';
-import {TestHelpers} from '../../Constants';
+import TabBarLabel from '../TabBarLabel';
+import {TestHelpers} from '../../../Constants';
 
 const {sampleText} = TestHelpers;
 
@@ -10,7 +10,7 @@ describe('<TabBarLabel>', () => {
   const Component = (<TabBarLabel
     focused={false}
     title={sampleText}
-                     />);
+  />);
 
   describe('Structure', () => {
     it('renders correctly', () => {

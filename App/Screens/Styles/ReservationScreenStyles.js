@@ -10,7 +10,7 @@ export default StyleSheet.create({
     borderTopColor: 'transparent',
     height: 36,
     color: Colors.charcoal,
-    fontSize: 16,
+    fontSize: 14,
     fontFamily: Platform.OS == 'ios' ? Fonts.typeIOS.base : Fonts.typeAndroid.base,
   },
   titleStyle: {
@@ -19,16 +19,15 @@ export default StyleSheet.create({
   },
   buttonStyle: {
     backgroundColor: Colors.vividBlue,
+    width: 100,
+    marginRight: 10,
+    borderRadius: 4
   },
   pickerStyle: {
     width: 200,
     backgroundColor: Colors.extraLightGray,
     marginLeft: 10,
     borderRadius: 4,
-  },
-  buttonContainer: {
-    flex: 0.2,
-    marginRight: 10,
   },
   stickyFilter: {
     marginBottom: 10,

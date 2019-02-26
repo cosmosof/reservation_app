@@ -1,37 +1,36 @@
-import React from 'react'
-import { Text, View, Platform } from 'react-native'
-import Icon from 'react-native-vector-icons/Ionicons'
-import { SearchBar, Button } from 'react-native-elements'
-import {Colors, Fonts} from '../../Constants'
-import styles from './Styles/SearchStyles'
+import React from 'react';
+import {TextInput, View, Platform} from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
+import {Colors} from '../../Constants';
+import styles from './Styles/SearchStyles';
 
 export default class Search extends React.Component {
   state = {
-    search: '',
-  }
-  updateSearch = search => {
-    this.setState({ search })
-  }
+    text: '',
+  };
+  updateText = (text) => {
+    this.setState({text});
+  };
   render() {
-    const { search, searchText } = this.state
+    const {text} = this.state;
     return (
       <View style={styles.searchBarContainer}>
-        <SearchBar
-          round
-          placeholder="search reservations..."
-          onChangeText={this.updateSearch}
-          value={search}
-          containerStyle={{
-            flex: 0.8,
-            backgroundColor: '#fff',
-            borderTopColor: 'transparent',
-            borderBottomColor: 'transparent',
-          }}
-          inputContainerStyle={{ backgroundColor: Colors.extraLightGray }}
-          inputStyle={{ fontSize: 14, fontFamily: Platform.OS == 'ios' ? Fonts.typeIOS.base : Fonts.typeAndroid.base}}
-        />
-        {this.props.children(search)}
+        <View style={styles.searchBar}>
+          <Icon
+            color={Colors.charcoal}
+            name={Platform.OS == 'ios' ? 'ios-search' : 'md-search'}
+            size={20}
+          />
+          <TextInput
+            autoCorrect={false}
+            onChangeText={(text) => this.updateText(text)}
+            placeholder="search reservations..."
+            style={styles.textInput}
+            value={text}
+          />
+        </View>
+        {this.props.children(text)}
       </View>
-    )
+    );
   }
 }
