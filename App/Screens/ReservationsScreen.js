@@ -1,15 +1,15 @@
 import React from 'react';
-import {Picker, SafeAreaView, FlatList} from 'react-native';
+import {FlatList, Picker, SafeAreaView} from 'react-native';
 import {Query} from 'react-apollo';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import AlertMessage from '../Components/Common/AlertMessage';
+import Button from '../Components/Common/Button';
+import Center from '../Components/ReservationsScreen/Center';
+import ListCard from '../Components/ReservationsScreen/ListCard';
+import Label from '../Components/Common/Label';
 import Search from '../Components/ReservationsScreen/Search';
 import StickyCard from '../Components/ReservationsScreen/StickyCard';
 import Row from '../Components/Common/Row';
-import Label from '../Components/Common/Label';
-import AlertMessage from '../Components/Common/AlertMessage';
-import Button from '../Components/Common/Button';
-import ListCard from '../Components/ReservationsScreen/ListCard';
-import Center from '../Components/ReservationsScreen/Center';
 import {ListFilters, Colors} from '../Constants';
 import {RESERVATIONS} from '../API/Queries';
 

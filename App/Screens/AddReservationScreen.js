@@ -5,12 +5,12 @@ import {Formik} from 'formik';
 import * as Yup from 'yup';
 import {Mutation} from 'react-apollo';
 import DatePicker from 'react-native-datepicker';
-import InputLabel from '../Components/AddReservationScreen/InputLabel';
-import Input from '../Components/AddReservationScreen/Input';
 import AlertMessage from '../Components/Common/AlertMessage';
 import Button from '../Components/Common/Button';
-import Row from '../Components/Common/Row';
+import InputLabel from '../Components/AddReservationScreen/InputLabel';
+import Input from '../Components/AddReservationScreen/Input';
 import Label from '../Components/Common/Label';
+import Row from '../Components/Common/Row';
 import {CREATE_RESERVATIONS} from '../API/Mutations';
 
 import styles from './Styles/AddReservationStyles';
