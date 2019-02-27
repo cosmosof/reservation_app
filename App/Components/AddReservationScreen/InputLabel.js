@@ -16,8 +16,8 @@ export default function InputLabel(props: Props) {
   return (
     <Text
       style={{
-        ...containerStyle,
         ...styles.container,
+        ...containerStyle,
       }}
     >
       {label}
@@ -27,5 +27,5 @@ export default function InputLabel(props: Props) {
 
 InputLabel.defaultProps = {
   containerStyle: undefined,
-  label: undefined,
+  label: 'add a label',
 };

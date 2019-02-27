@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<InputLabel> Structure renders correctly 1`] = `
+<Text
+  style={
+    Object {
+      "color": "#00A8E8",
+      "fontFamily": "AvenirNextCondensed-DemiBold",
+      "fontSize": 14,
+      "fontWeight": "500",
+      "paddingBottom": 10,
+      "paddingRight": 10,
+      "paddingTop": 10,
+      "width": 90,
+    }
+  }
+>
+  add a label
+</Text>
+`;
+
+exports[`<InputLabel> Structure renders correctly if containerStyle prop is set 1`] = `
+<Text
+  style={
+    Object {
+      "color": "red",
+      "fontFamily": "AvenirNextCondensed-DemiBold",
+      "fontSize": 14,
+      "fontWeight": "500",
+      "paddingBottom": 10,
+      "paddingRight": 10,
+      "paddingTop": 10,
+      "width": 90,
+    }
+  }
+>
+  add a label
+</Text>
+`;
+
+exports[`<InputLabel> Structure renders correctly if title prop is set 1`] = `
+<Text
+  style={
+    Object {
+      "color": "#00A8E8",
+      "fontFamily": "AvenirNextCondensed-DemiBold",
+      "fontSize": 14,
+      "fontWeight": "500",
+      "paddingBottom": 10,
+      "paddingRight": 10,
+      "paddingTop": 10,
+      "width": 90,
+    }
+  }
+>
+  Sample text
+</Text>
+`;
