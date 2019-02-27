@@ -1,10 +1,18 @@
-import React from 'react';
+// @flow
+
+import * as React from 'react';
 import {Text} from 'react-native';
-import PropTypes from 'prop-types';
 
 import styles from './Styles/InputLabelStyles';
 
-export default (InputLabel = ({containerStyle, label}) => {
+  type Props = {
+    containerStyle?: Object,
+    label?: string,
+    styles: Object,
+  };
+
+export default function InputLabel(props: Props) {
+  const {containerStyle, label} = props;
   return (
     <Text
       style={{
@@ -15,9 +23,9 @@ export default (InputLabel = ({containerStyle, label}) => {
       {label}
     </Text>
   );
-});
+}
 
-InputLabel.propTypes = {
-  containerStyle: PropTypes.object,
-  label: PropTypes.string.isRequired,
+InputLabel.defaultProps = {
+  containerStyle: undefined,
+  label: undefined,
 };

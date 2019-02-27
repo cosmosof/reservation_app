@@ -11,4 +11,5 @@ const RESERVATIONS = gql`
     }
   }
 `;
+
 export {RESERVATIONS};

@@ -1,16 +1,34 @@
-import React from 'react';
+// @flow
+
+import * as React from 'react';
 import {Text, TextInput, View} from 'react-native';
 
 import styles from './Styles/InputStyles';
 
-export default class InputSection extends React.Component {
-  constructor(props) {
+type Props = {
+  error?: boolean,
+  inputStyles?: Object,
+  label?: string,
+  name?: string,
+  onChange: Function,
+  onTouch: Function,
+  styles: Object,
+  value?: string,
+};
+
+type State = {
+  boxShadow: Object | null,
+};
+
+export default class Input extends React.Component<Props, State> {
+  static defaultProps: Object;
+  constructor(props: Object) {
     super(props);
     this.state = {
       boxShadow: null,
     };
   }
-  handleChange = (value) => {
+  handleChange = (value: string) => {
     this.props.onChange(this.props.name, value);
   };
 
@@ -23,7 +41,7 @@ export default class InputSection extends React.Component {
   }
   render() {
     const {boxShadow} = this.state;
-    const {error, inputStyles, label} = this.props;
+    const {error, inputStyles, label, value} = this.props;
     const {container, errorText, textInput} = styles;
     return (
       <View style={container}>
@@ -39,9 +57,18 @@ export default class InputSection extends React.Component {
           returnKeyType="next"
           style={[textInput, inputStyles, boxShadow]}
           underlineColorAndroid="transparent"
+          value={value}
         />
         {error && <Text style={errorText}>{error}</Text>}
       </View>
     );
   }
 }
+
+Input.defaultProps = {
+  error: false,
+  inputStyles: undefined,
+  label: undefined,
+  name: undefined,
+  value: undefined,
+};

@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 import Colors from '../../Constants/Colors';
 
-type Props = { focused: Boolean, name: String };
+type Props = { focused: boolean, name: string };
 
 export default function TabBarIcon(props: Props) {
   return (

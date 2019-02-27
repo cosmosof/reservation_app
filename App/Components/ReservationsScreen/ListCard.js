@@ -1,10 +1,10 @@
 // @flow
 
-import React from 'react';
+import * as React from 'react';
 import {Text, View} from 'react-native';
 import styles from './Styles/ListCardStyles';
 
-type Props = { data: Object };
+type Props = { data: Object, styles: Object };
 
 export default function ListCard(props: Props) {
   const {container, value, label, oddRow, row} = styles;

@@ -1,14 +1,26 @@
-import React from 'react';
+// @flow
+
+import * as React from 'react';
 import {TextInput, View, Platform} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {Colors} from '../../Constants';
+
 import styles from './Styles/SearchStyles';
 
-export default class Search extends React.Component {
+type Props = {
+  children: Function,
+  styles: Object,
+};
+
+type State = {
+  text: string | null,
+};
+
+export default class Search extends React.Component<Props, State> {
   state = {
     text: '',
   };
-  updateText = (text) => {
+  updateText = (text: string) => {
     this.setState({text});
   };
   render() {

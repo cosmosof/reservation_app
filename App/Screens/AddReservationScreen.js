@@ -140,7 +140,6 @@ export default class AddReservationScreen extends React.Component {
                           <Row style={row}>
                             <InputLabel label="Name" />
                             <Input
-                              autoCapitalize="none"
                               error={touched.name && errors.name}
                               inputStyles={inputStyle}
                               label="enter a name"
@@ -153,7 +152,6 @@ export default class AddReservationScreen extends React.Component {
                           <Row style={row}>
                             <InputLabel label="Hotel Name" />
                             <Input
-                              autoCapitalize="none"
                               error={touched.hotelName && errors.hotelName}
                               inputStyles={inputStyle}
                               label="enter a hotel name"
