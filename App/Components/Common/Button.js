@@ -1,7 +1,7 @@
 // @flow
 
 import React from 'react';
-import {TouchableHighlight, Text} from 'react-native';
+import {TouchableHighlight, Text, StyleSheet} from 'react-native';
 import styles from './Styles/ButtonStyles';
 
 type Props = {

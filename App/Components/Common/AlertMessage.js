@@ -14,10 +14,10 @@ type Props = {
 
 export default function AlertMessage(props: Props) {
   let messageComponent = null;
-  if (this.props.show) {
-    const {title} = this.props;
+  if (props.show) {
+    const {title} = props;
     return (
-      <View style={[styles.container, this.props.style]}>
+      <View style={[styles.container, props.style]}>
         <View style={styles.contentContainer}>
           <Text
             allowFontScaling={false}
@@ -34,4 +34,5 @@ export default function AlertMessage(props: Props) {
 
 AlertMessage.defaultProps = {
   show: true,
+  style: undefined,
 };

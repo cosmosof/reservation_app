@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Label> Structure renders correctly 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "fontFamily": "AvenirNextCondensed-DemiBold",
+        "textAlign": "center",
+      },
+      undefined,
+    ]
+  }
+/>
+`;
+
+exports[`<Label> Structure renders correctly if children prop is set 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "fontFamily": "AvenirNextCondensed-DemiBold",
+        "textAlign": "center",
+      },
+      undefined,
+    ]
+  }
+>
+  Sample text
+</Text>
+`;
+
+exports[`<Label> Structure renders correctly if styles prop is set 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "fontFamily": "AvenirNextCondensed-DemiBold",
+        "textAlign": "center",
+      },
+      undefined,
+    ]
+  }
+/>
+`;
+
+exports[`<Label> Structure renders correctly if textStyle prop is set 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "fontFamily": "AvenirNextCondensed-DemiBold",
+        "textAlign": "center",
+      },
+      Object {
+        "backgroundColor": "blue",
+      },
+    ]
+  }
+/>
+`;
+
+exports[`<Label> Structure renders correctly if title prop is set 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "fontFamily": "AvenirNextCondensed-DemiBold",
+        "textAlign": "center",
+      },
+      undefined,
+    ]
+  }
+>
+  Sample text
+</Text>
+`;

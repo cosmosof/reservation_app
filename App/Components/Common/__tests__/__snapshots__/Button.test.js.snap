@@ -1,0 +1,229 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button> Structure renders correctly 1`] = `
+<TouchableHighlight
+  activeOpacity={0.85}
+  delayPressOut={100}
+  disabled={false}
+  onPress={[Function]}
+  style={
+    Array [
+      Object {
+        "backgroundColor": "gray",
+        "maxHeight": 40,
+        "padding": 8,
+      },
+      undefined,
+      false,
+    ]
+  }
+  underlayColor="transparent"
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "white",
+          "fontFamily": "AvenirNextCondensed-DemiBold",
+          "fontSize": 16,
+          "textAlign": "center",
+        },
+        undefined,
+      ]
+    }
+  >
+    Sample text
+  </Text>
+</TouchableHighlight>
+`;
+
+exports[`<Button> Structure renders correctly if buttonStyle prop is set 1`] = `
+<TouchableHighlight
+  activeOpacity={0.85}
+  delayPressOut={100}
+  disabled={false}
+  onPress={[Function]}
+  style={
+    Array [
+      Object {
+        "backgroundColor": "gray",
+        "maxHeight": 40,
+        "padding": 8,
+      },
+      Object {
+        "backgroundColor": "red",
+      },
+      false,
+    ]
+  }
+  underlayColor="transparent"
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "white",
+          "fontFamily": "AvenirNextCondensed-DemiBold",
+          "fontSize": 16,
+          "textAlign": "center",
+        },
+        undefined,
+      ]
+    }
+  >
+    Sample text
+  </Text>
+</TouchableHighlight>
+`;
+
+exports[`<Button> Structure renders correctly if disabled prop is set true 1`] = `
+<TouchableHighlight
+  activeOpacity={0.85}
+  delayPressOut={100}
+  disabled={true}
+  onPress={[Function]}
+  style={
+    Array [
+      Object {
+        "backgroundColor": "gray",
+        "maxHeight": 40,
+        "padding": 8,
+      },
+      undefined,
+      Object {
+        "backgroundColor": "#E2E6E8",
+      },
+    ]
+  }
+  underlayColor="transparent"
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "white",
+          "fontFamily": "AvenirNextCondensed-DemiBold",
+          "fontSize": 16,
+          "textAlign": "center",
+        },
+        undefined,
+      ]
+    }
+  >
+    Sample text
+  </Text>
+</TouchableHighlight>
+`;
+
+exports[`<Button> Structure renders correctly if styles prop is set 1`] = `
+<TouchableHighlight
+  activeOpacity={0.85}
+  delayPressOut={100}
+  disabled={false}
+  onPress={[Function]}
+  style={
+    Array [
+      Object {
+        "backgroundColor": "gray",
+        "maxHeight": 40,
+        "padding": 8,
+      },
+      undefined,
+      false,
+    ]
+  }
+  underlayColor="transparent"
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "white",
+          "fontFamily": "AvenirNextCondensed-DemiBold",
+          "fontSize": 16,
+          "textAlign": "center",
+        },
+        undefined,
+      ]
+    }
+  >
+    Sample text
+  </Text>
+</TouchableHighlight>
+`;
+
+exports[`<Button> Structure renders correctly if textStyle prop is set 1`] = `
+<TouchableHighlight
+  activeOpacity={0.85}
+  delayPressOut={100}
+  disabled={false}
+  onPress={[Function]}
+  style={
+    Array [
+      Object {
+        "backgroundColor": "gray",
+        "maxHeight": 40,
+        "padding": 8,
+      },
+      undefined,
+      false,
+    ]
+  }
+  underlayColor="transparent"
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "white",
+          "fontFamily": "AvenirNextCondensed-DemiBold",
+          "fontSize": 16,
+          "textAlign": "center",
+        },
+        Object {
+          "fontSize": 16,
+        },
+      ]
+    }
+  >
+    Sample text
+  </Text>
+</TouchableHighlight>
+`;
+
+exports[`<Button> Structure renders correctly if title prop is set 1`] = `
+<TouchableHighlight
+  activeOpacity={0.85}
+  delayPressOut={100}
+  disabled={false}
+  onPress={[Function]}
+  style={
+    Array [
+      Object {
+        "backgroundColor": "gray",
+        "maxHeight": 40,
+        "padding": 8,
+      },
+      undefined,
+      false,
+    ]
+  }
+  underlayColor="transparent"
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "white",
+          "fontFamily": "AvenirNextCondensed-DemiBold",
+          "fontSize": 16,
+          "textAlign": "center",
+        },
+        undefined,
+      ]
+    }
+  >
+    Sample text
+  </Text>
+</TouchableHighlight>
+`;
