@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1551266842922" clover="3.2.0">
-  <project timestamp="1551266842922" name="All files">
-    <metrics statements="154" coveredstatements="148" conditionals="38" coveredconditionals="23" methods="24" coveredmethods="14" elements="216" coveredelements="185" complexity="0" loc="154" ncloc="154" packages="10" files="27" classes="27"/>
+<coverage generated="1551289235579" clover="3.2.0">
+  <project timestamp="1551289235579" name="All files">
+    <metrics statements="183" coveredstatements="176" conditionals="42" coveredconditionals="25" methods="30" coveredmethods="19" elements="255" coveredelements="220" complexity="0" loc="183" ncloc="183" packages="10" files="31" classes="31"/>
     <package name="App.Components.AddReservationScreen">
       <metrics statements="28" coveredstatements="23" conditionals="2" coveredconditionals="1" methods="8" coveredmethods="4"/>
       <file name="Input.js" path="/Users/mustafa/Desktop/back_ups/reactN/2019-RN/ReservationApp/App/Components/AddReservationScreen/Input.js">
@@ -160,7 +160,7 @@
       </file>
     </package>
     <package name="App.Components.ReservationsScreen">
-      <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <metrics statements="34" coveredstatements="33" conditionals="2" coveredconditionals="1" methods="8" coveredmethods="7"/>
       <file name="Center.js" path="/Users/mustafa/Desktop/back_ups/reactN/2019-RN/ReservationApp/App/Components/ReservationsScreen/Center.js">
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
@@ -180,9 +180,36 @@
         <line num="11" count="1" type="stmt"/>
         <line num="12" count="1" type="stmt"/>
       </file>
+      <file name="Search.js" path="/Users/mustafa/Desktop/back_ups/reactN/2019-RN/ReservationApp/App/Components/ReservationsScreen/Search.js">
+        <metrics statements="16" coveredstatements="15" conditionals="2" coveredconditionals="1" methods="5" coveredmethods="4"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="4" type="stmt"/>
+        <line num="21" count="4" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="29" count="4" type="stmt"/>
+        <line num="30" count="6" type="stmt"/>
+        <line num="31" count="6" type="stmt"/>
+        <line num="32" count="6" type="stmt"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="51" count="1" type="stmt"/>
+      </file>
+      <file name="StickyCard.js" path="/Users/mustafa/Desktop/back_ups/reactN/2019-RN/ReservationApp/App/Components/ReservationsScreen/StickyCard.js">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+      </file>
     </package>
     <package name="App.Components.ReservationsScreen.Styles">
-      <metrics statements="7" coveredstatements="7" conditionals="4" coveredconditionals="2" methods="0" coveredmethods="0"/>
+      <metrics statements="15" coveredstatements="15" conditionals="6" coveredconditionals="3" methods="0" coveredmethods="0"/>
       <file name="CenterStyles.js" path="/Users/mustafa/Desktop/back_ups/reactN/2019-RN/ReservationApp/App/Components/ReservationsScreen/Styles/CenterStyles.js">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
@@ -196,74 +223,88 @@
         <line num="4" count="1" type="stmt"/>
         <line num="46" count="1" type="cond" truecount="1" falsecount="1"/>
       </file>
+      <file name="SearchStyles.js" path="/Users/mustafa/Desktop/back_ups/reactN/2019-RN/ReservationApp/App/Components/ReservationsScreen/Styles/SearchStyles.js">
+        <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="1" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+      </file>
+      <file name="StickyCardStyles.js" path="/Users/mustafa/Desktop/back_ups/reactN/2019-RN/ReservationApp/App/Components/ReservationsScreen/Styles/StickyCardStyles.js">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+      </file>
     </package>
     <package name="App.Constants">
       <metrics statements="35" coveredstatements="35" conditionals="8" coveredconditionals="4" methods="8" coveredmethods="3"/>
       <file name="ApplicationStyles.js" path="/Users/mustafa/Desktop/back_ups/reactN/2019-RN/ReservationApp/App/Constants/ApplicationStyles.js">
         <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="1" methods="0" coveredmethods="0"/>
-        <line num="1" count="9" type="stmt"/>
-        <line num="2" count="9" type="stmt"/>
-        <line num="3" count="9" type="stmt"/>
-        <line num="5" count="9" type="stmt"/>
-        <line num="14" count="9" type="stmt"/>
-        <line num="15" count="9" type="stmt"/>
+        <line num="1" count="11" type="stmt"/>
+        <line num="2" count="11" type="stmt"/>
+        <line num="3" count="11" type="stmt"/>
+        <line num="5" count="11" type="stmt"/>
+        <line num="14" count="11" type="stmt"/>
+        <line num="15" count="11" type="stmt"/>
       </file>
       <file name="Colors.js" path="/Users/mustafa/Desktop/back_ups/reactN/2019-RN/ReservationApp/App/Constants/Colors.js">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="9" type="stmt"/>
-        <line num="3" count="9" type="stmt"/>
-        <line num="60" count="9" type="stmt"/>
+        <line num="1" count="11" type="stmt"/>
+        <line num="3" count="11" type="stmt"/>
+        <line num="60" count="11" type="stmt"/>
       </file>
       <file name="Fonts.js" path="/Users/mustafa/Desktop/back_ups/reactN/2019-RN/ReservationApp/App/Constants/Fonts.js">
         <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="9" type="stmt"/>
-        <line num="6" count="9" type="stmt"/>
-        <line num="10" count="9" type="stmt"/>
-        <line num="21" count="9" type="stmt"/>
-        <line num="35" count="9" type="stmt"/>
-        <line num="70" count="9" type="stmt"/>
-        <line num="75" count="9" type="stmt"/>
+        <line num="1" count="11" type="stmt"/>
+        <line num="6" count="11" type="stmt"/>
+        <line num="10" count="11" type="stmt"/>
+        <line num="21" count="11" type="stmt"/>
+        <line num="35" count="11" type="stmt"/>
+        <line num="70" count="11" type="stmt"/>
+        <line num="75" count="11" type="stmt"/>
       </file>
       <file name="Images.js" path="/Users/mustafa/Desktop/back_ups/reactN/2019-RN/ReservationApp/App/Constants/Images.js">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="9" type="stmt"/>
-        <line num="5" count="9" type="stmt"/>
+        <line num="1" count="11" type="stmt"/>
+        <line num="5" count="11" type="stmt"/>
       </file>
       <file name="ListFilters.js" path="/Users/mustafa/Desktop/back_ups/reactN/2019-RN/ReservationApp/App/Constants/ListFilters.js">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="9" type="stmt"/>
-        <line num="40" count="9" type="stmt"/>
+        <line num="1" count="11" type="stmt"/>
+        <line num="40" count="11" type="stmt"/>
       </file>
       <file name="Metrics.js" path="/Users/mustafa/Desktop/back_ups/reactN/2019-RN/ReservationApp/App/Constants/Metrics.js">
         <metrics statements="4" coveredstatements="4" conditionals="6" coveredconditionals="3" methods="0" coveredmethods="0"/>
-        <line num="1" count="9" type="stmt"/>
-        <line num="3" count="9" type="stmt"/>
-        <line num="6" count="9" type="stmt"/>
-        <line num="35" count="9" type="stmt"/>
+        <line num="1" count="11" type="stmt"/>
+        <line num="3" count="11" type="stmt"/>
+        <line num="6" count="11" type="stmt"/>
+        <line num="35" count="11" type="stmt"/>
       </file>
       <file name="TestHelpers.js" path="/Users/mustafa/Desktop/back_ups/reactN/2019-RN/ReservationApp/App/Constants/TestHelpers.js">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="1" count="9" type="stmt"/>
-        <line num="2" count="9" type="stmt"/>
-        <line num="3" count="9" type="stmt"/>
-        <line num="5" count="9" type="stmt"/>
+        <line num="1" count="11" type="stmt"/>
+        <line num="2" count="11" type="stmt"/>
+        <line num="3" count="11" type="stmt"/>
+        <line num="5" count="11" type="stmt"/>
       </file>
       <file name="index.js" path="/Users/mustafa/Desktop/back_ups/reactN/2019-RN/ReservationApp/App/Constants/index.js">
         <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="3"/>
-        <line num="1" count="23" type="stmt"/>
-        <line num="2" count="9" type="stmt"/>
-        <line num="3" count="9" type="stmt"/>
-        <line num="4" count="9" type="stmt"/>
-        <line num="5" count="9" type="stmt"/>
-        <line num="6" count="9" type="stmt"/>
-        <line num="7" count="9" type="stmt"/>
+        <line num="1" count="34" type="stmt"/>
+        <line num="2" count="11" type="stmt"/>
+        <line num="3" count="11" type="stmt"/>
+        <line num="4" count="11" type="stmt"/>
+        <line num="5" count="11" type="stmt"/>
+        <line num="6" count="11" type="stmt"/>
+        <line num="7" count="11" type="stmt"/>
       </file>
     </package>
     <package name="jest">
       <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
       <file name="assetsTransformer.js" path="/Users/mustafa/Desktop/back_ups/reactN/2019-RN/ReservationApp/jest/assetsTransformer.js">
         <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="1" count="9" type="stmt"/>
+        <line num="1" count="11" type="stmt"/>
         <line num="3" count="0" type="stmt"/>
       </file>
     </package>

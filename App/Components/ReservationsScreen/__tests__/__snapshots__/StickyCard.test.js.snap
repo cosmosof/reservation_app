@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<StickyCard> Structure renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "white",
+      "flexDirection": "column",
+      "justifyContent": "center",
+      "marginBottom": 5,
+      "paddingTop": 5,
+    }
+  }
+/>
+`;
+
+exports[`<StickyCard> Structure renders correctly if children prop is set 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "white",
+      "flexDirection": "column",
+      "justifyContent": "center",
+      "marginBottom": 5,
+      "paddingTop": 5,
+    }
+  }
+>
+  Sample text
+</View>
+`;

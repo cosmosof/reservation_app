@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Search> Structure renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "white",
+      "flex": 1,
+      "flexDirection": "row",
+      "justifyContent": "center",
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#F4F4F4",
+        "borderColor": "#CCCCCC",
+        "borderRadius": 4,
+        "borderWidth": 0.5,
+        "flexDirection": "row",
+        "height": 36,
+        "justifyContent": "center",
+        "marginRight": 10,
+        "paddingLeft": 10,
+      }
+    }
+  >
+    <Icon
+      allowFontScaling={false}
+      color="#595959"
+      name="ios-search"
+      size={20}
+    />
+    <TextInput
+      allowFontScaling={true}
+      autoCorrect={false}
+      onChangeText={[Function]}
+      placeholder="search reservations..."
+      style={
+        Object {
+          "color": "#2d2d2d",
+          "fontFamily": "AvenirNext-Regular",
+          "fontSize": 14,
+          "height": 40,
+          "padding": 6,
+          "width": 220,
+        }
+      }
+      underlineColorAndroid="transparent"
+      value=""
+    />
+  </View>
+</View>
+`;

@@ -13,13 +13,17 @@ type Props = {
 };
 
 type State = {
-  text: string | null,
+  text: string,
 };
 
 export default class Search extends React.Component<Props, State> {
-  state = {
-    text: '',
-  };
+  constructor(props) {
+    super(props)
+    this.state = {
+      text: '',
+    };
+  }
+  
   updateText = (text: string) => {
     this.setState({text});
   };

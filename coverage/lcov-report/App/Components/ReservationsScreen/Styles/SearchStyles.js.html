@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for App/Components/AddReservationScreen/Styles/InputStyles.js</title>
+    <title>Code coverage report for App/Components/ReservationsScreen/Styles/SearchStyles.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../../../prettify.css" />
     <link rel="stylesheet" href="../../../../base.css" />
@@ -16,7 +16,7 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="../../../../index.html">All files</a> / <a href="index.html">App/Components/AddReservationScreen/Styles</a> InputStyles.js
+      <a href="../../../../index.html">All files</a> / <a href="index.html">App/Components/ReservationsScreen/Styles</a> SearchStyles.js
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
@@ -78,16 +78,10 @@
 <a name='L30'></a><a href='#L30'>30</a>
 <a name='L31'></a><a href='#L31'>31</a>
 <a name='L32'></a><a href='#L32'>32</a>
-<a name='L33'></a><a href='#L33'>33</a>
-<a name='L34'></a><a href='#L34'>34</a>
-<a name='L35'></a><a href='#L35'>35</a>
-<a name='L36'></a><a href='#L36'>36</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L33'></a><a href='#L33'>33</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -120,35 +114,32 @@
 import {Colors, Fonts} from '../../../Constants';
 &nbsp;
 export default StyleSheet.create({
-  boxShadow: {
-    borderColor: Colors.vividBlue,
-    elevation: 1,
-    shadowColor: Colors.vividBlue,
-    shadowOffset: {width: 0, height: 0},
-    shadowOpacity: 0.5,
-    shadowRadius: 3,
+  searchBarContainer: {
+    alignItems: 'center',
+    backgroundColor: Colors.snow,
+    flexDirection: 'row',
+    flex: 1,
+    justifyContent: 'center',
   },
-  container: {
-    flexDirection: 'column',
-  },
-  errorText: {
-    alignSelf: 'flex-start',
-    color: Colors.pastelRed,
-    fontSize: 14,
-    fontWeight: '400',
-    padding: 5,
+  searchBar: {
+    alignItems: 'center',
+    backgroundColor: Colors.extraLightGray,
+    borderColor: Colors.steel,
+    borderWidth: StyleSheet.hairlineWidth,
+    borderRadius: 4,
+    flexDirection: 'row',
+    height: 36,
+    justifyContent: 'center',
+    marginRight: 10,
+    paddingLeft: 10,
   },
   textInput: {
-    borderWidth: StyleSheet.hairlineWidth,
-    borderColor: Colors.steel,
-    borderRadius: 2,
-    backgroundColor: Colors.snow,
     color: Colors.coal,
     fontFamily: Platform.OS == 'ios' ? Fonts.typeIOS.base : Fonts.typeAndroid.base,<span class="branch-1 cbranch-no" title="branch not covered" ></span>
-    fontSize: 14,
-    height: 36,
-    padding: 10,
-    width: 200,
+    fontSize: Fonts.size.medium,
+    height: 40,
+    padding: 6,
+    width: 220,
   },
 });
 &nbsp;</pre></td></tr>
