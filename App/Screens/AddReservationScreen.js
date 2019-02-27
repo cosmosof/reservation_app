@@ -11,7 +11,7 @@ import InputLabel from '../Components/AddReservationScreen/InputLabel';
 import Input from '../Components/AddReservationScreen/Input';
 import Label from '../Components/Common/Label';
 import Row from '../Components/Common/Row';
-import {CREATE_RESERVATIONS} from '../API/Mutations';
+import {CREATE_RESERVATIONS} from '../Api/Mutations';
 
 import styles from './Styles/AddReservationStyles';
 

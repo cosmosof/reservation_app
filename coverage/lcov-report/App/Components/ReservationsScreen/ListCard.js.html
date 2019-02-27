@@ -1,14 +1,14 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for App/Constants/Metrics.js</title>
+    <title>Code coverage report for App/Components/ReservationsScreen/ListCard.js</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../../prettify.css" />
-    <link rel="stylesheet" href="../../base.css" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style type='text/css'>
         .coverage-summary .sorter {
-            background-image: url(../../sort-arrow-sprite.png);
+            background-image: url(../../../sort-arrow-sprite.png);
         }
     </style>
 </head>
@@ -16,28 +16,28 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="../../index.html">All files</a> / <a href="index.html">App/Constants</a> Metrics.js
+      <a href="../../../index.html">All files</a> / <a href="index.html">App/Components/ReservationsScreen</a> ListCard.js
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>9/9</span>
-      </div>
-      <div class='fl pad1y space-right2'>
-        <span class="strong">50% </span>
-        <span class="quiet">Branches</span>
-        <span class='fraction'>3/6</span>
+        <span class='fraction'>20/20</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
-        <span class="quiet">Functions</span>
+        <span class="quiet">Branches</span>
         <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/1</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>4/4</span>
+        <span class='fraction'>7/7</span>
       </div>
     </div>
     <p class="quiet">
@@ -81,20 +81,18 @@
 <a name='L33'></a><a href='#L33'>33</a>
 <a name='L34'></a><a href='#L34'>34</a>
 <a name='L35'></a><a href='#L35'>35</a>
-<a name='L36'></a><a href='#L36'>36</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">9x</span>
+<a name='L36'></a><a href='#L36'>36</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -115,42 +113,44 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import {Dimensions, Platform} from 'react-native';
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// @flow
 &nbsp;
-const {width, height} = Dimensions.get('window');
+import * as React from 'react';
+import {Text, View} from 'react-native';
+import styles from './Styles/ListCardStyles';
 &nbsp;
-// Used via Metrics.baseMargin
-const metrics = {
-  marginHorizontal: 10,
-  marginVertical: 10,
-  section: 25,
-  baseMargin: 10,
-  doubleBaseMargin: 20,
-  smallMargin: 5,
-  doubleSection: 50,
-  horizontalLineHeight: 1,
-  searchBarHeight: 30,
-  screenWidth: width &lt; height ? width : <span class="branch-1 cbranch-no" title="branch not covered" >height,</span>
-  screenHeight: width &lt; height ? height : <span class="branch-1 cbranch-no" title="branch not covered" >width,</span>
-  navBarHeight: Platform.OS === 'ios' ? 64 : 54,<span class="branch-1 cbranch-no" title="branch not covered" ></span>
-  buttonRadius: 4,
-  icons: {
-    tiny: 15,
-    small: 20,
-    medium: 30,
-    large: 45,
-    xl: 50,
-  },
-  images: {
-    small: 20,
-    medium: 40,
-    large: 60,
-    logo: 200,
-  },
-};
+type Props = { data: Object, styles: Object };
 &nbsp;
-export default metrics;
+export default function ListCard(props: Props) {
+  const {container, value, label, oddRow, row} = styles;
+  const {name, id, hotelName, arrivalDate, departureDate} = props.data;
+  return (
+    &lt;View
+      key={id}
+      style={container}
+    &gt;
+      &lt;View style={oddRow}&gt;
+        &lt;Text style={label}&gt;Guest name &lt;/Text&gt;
+        &lt;Text style={value}&gt; {name} &lt;/Text&gt;
+      &lt;/View&gt;
+      &lt;View style={row}&gt;
+        &lt;Text style={label}&gt;Hotel name &lt;/Text&gt;
+        &lt;Text style={value}&gt; {hotelName} &lt;/Text&gt;
+      &lt;/View&gt;
+      &lt;View style={oddRow}&gt;
+        &lt;Text style={label}&gt;Arrival date&lt;/Text&gt;
+        &lt;Text style={value}&gt; {arrivalDate} &lt;/Text&gt;
+      &lt;/View&gt;
+      &lt;View style={row}&gt;
+        &lt;Text style={label}&gt;Departure date&lt;/Text&gt;
+        &lt;Text style={value}&gt; {departureDate} &lt;/Text&gt;
+      &lt;/View&gt;
+    &lt;/View&gt;
+  );
+}
 &nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
@@ -160,7 +160,7 @@ export default metrics;
   generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Feb 27 2019 06:27:22 GMT-0500 (Eastern Standard Time)
 </div>
 </div>
-<script src="../../prettify.js"></script>
+<script src="../../../prettify.js"></script>
 <script>
 window.onload = function () {
         if (typeof prettyPrint === 'function') {
@@ -168,7 +168,7 @@ window.onload = function () {
         }
 };
 </script>
-<script src="../../sorter.js"></script>
-<script src="../../block-navigation.js"></script>
+<script src="../../../sorter.js"></script>
+<script src="../../../block-navigation.js"></script>
 </body>
 </html>

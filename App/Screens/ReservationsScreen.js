@@ -11,7 +11,7 @@ import Search from '../Components/ReservationsScreen/Search';
 import StickyCard from '../Components/ReservationsScreen/StickyCard';
 import Row from '../Components/Common/Row';
 import {ListFilters, Colors} from '../Constants';
-import {RESERVATIONS} from '../API/Queries';
+import {RESERVATIONS} from '../Api/Queries';
 
 import styles from './Styles/ReservationScreenStyles';
 
