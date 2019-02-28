@@ -36,6 +36,7 @@ exports[`<Input> Structure renders correctly 1`] = `
         null,
       ]
     }
+    testID="TextInput"
     underlineColorAndroid="transparent"
   />
 </View>

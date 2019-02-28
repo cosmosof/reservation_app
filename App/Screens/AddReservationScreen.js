@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 import {KeyboardAvoidingView, Platform, SafeAreaView, Text, View} from 'react-native';
 import moment from 'moment';
@@ -14,22 +16,33 @@ import Row from '../Components/Common/Row';
 import {CREATE_RESERVATIONS} from '../Api/Mutations';
 
 import styles from './Styles/AddReservationStyles';
+type Props = {};
 
-export default class AddReservationScreen extends React.Component {
+type State = {
+  error: boolean,
+  success: boolean,
+  minDate: Object,
+};
+
+export default class AddReservationScreen extends React.Component<Props, State> {
+
   static navigationOptions = {
     headerTitle: <Label
       textStyle={styles.navbarHeader}
       title="Add New Reservations"
                  />,
   };
+  constructor(props: Object) {
+    super(props);
+    this.state = {
+      error: false,
+      success: false,
+      minDate: moment().toISOString(),
+    };
+  }
+  
 
-  state = {
-    error: false,
-    success: false,
-    minDate: moment().toISOString(),
-  };
-
-  handleButtonAction = (el) => {
+  handleButtonAction = (el: string) => {
     switch (true) {
     case el === 'success':
       this.setState(({success}) => ({
@@ -72,12 +85,12 @@ export default class AddReservationScreen extends React.Component {
     return (
       <SafeAreaView style={container}>
         <KeyboardAvoidingView
-          behavior={Platform.OS == 'ios' && 'padding'}
+          behavior={Platform.OS == 'ios' ? 'padding':null}
           enabled
           style={KeyboardAvoidingViewContainer}
         >
           {error && (
-            <View>
+            <React.Fragment>
               <AlertMessage title="An error cocured, please try again..." />
               <Button
                 buttonStyle={button}
@@ -85,10 +98,10 @@ export default class AddReservationScreen extends React.Component {
                 textStyle={buttonTitleStyle}
                 title="Try Again"
               />
-            </View>
+            </React.Fragment>
           )}
           {success ? (
-            <View>
+            <React.Fragment>
               <AlertMessage title="Reservation succesfully added..." />
               <Button
                 buttonStyle={button}
@@ -96,7 +109,7 @@ export default class AddReservationScreen extends React.Component {
                 textStyle={buttonTitleStyle}
                 title="Add Another"
               />
-            </View>
+            </React.Fragment>
           ) : (
             <Mutation
               mutation={CREATE_RESERVATIONS}

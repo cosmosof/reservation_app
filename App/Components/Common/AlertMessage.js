@@ -8,7 +8,7 @@ import styles from './Styles/AlertMessageStyles';
 type Props = {
   show?: boolean,
   style?: Object,
-  styles: Object,
+  styles?: Object,
   title: string,
 };
 
@@ -35,4 +35,5 @@ export default function AlertMessage(props: Props) {
 AlertMessage.defaultProps = {
   show: true,
   style: undefined,
+  styles: undefined,
 };

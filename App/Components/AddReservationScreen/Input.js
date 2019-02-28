@@ -50,6 +50,7 @@ export default class Input extends React.Component<Props, State> {
           autoCorrect={false}
           keyboardType="default"
           maxLength={600}
+          testID="TextInput"
           onBlur={this.handleTouch}
           onChangeText={this.handleChange}
           onFocus={() => this.textInputonFocusStyleHandle()}

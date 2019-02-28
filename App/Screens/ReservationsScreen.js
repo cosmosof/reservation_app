@@ -15,14 +15,24 @@ import {RESERVATIONS} from '../Api/Queries';
 
 import styles from './Styles/ReservationScreenStyles';
 
-export default class ReservationsScreen extends React.Component {
+type Props = {};
+
+type State = {
+  filter: string,
+  searchText: string,
+};
+
+export default class ReservationsScreen extends React.Component<Props, State> {
   static navigationOptions = {
     headerTitle: <Label
       textStyle={styles.navbarHeader}
       title="Reservations"
-    />,
+                 />,
   };
-  state = {filter: 'name', searchText: ''};
+  constructor(props: Object) {
+    super(props);
+    this.state = {filter: 'name', searchText: ''};
+  }
   handleFilter = (filter) => {
     this.setState({filter});
   };
@@ -32,7 +42,7 @@ export default class ReservationsScreen extends React.Component {
   render() {
     const {searchText, filter} = this.state;
     const {buttonStyle, container, filterLabel, itemStyle, pickerStyle, titleStyle, stickyFilter} = styles;
-    const variables = searchText===''?{where: {}}:{where: {[filter]: searchText}};
+    const variables = searchText === '' ? {where: {}} : {where: {[filter]: searchText}};
     return (
       <SafeAreaView style={container}>
         <StickyCard>

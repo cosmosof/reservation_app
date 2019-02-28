@@ -17,7 +17,7 @@ type State = {
 };
 
 export default class Search extends React.Component<Props, State> {
-  constructor(props) {
+  constructor(props: Object) {
     super(props)
     this.state = {
       text: '',

@@ -26,11 +26,5 @@ describe('<Search>', () => {
       wrapper.setState({text: sampleText});
       expect(wrapper.state('text')).toEqual(sampleText);
     });
-    it('onChangeText sets state correctly', () => {
-      const renderFn = jest.fn().mockReturnValue(null);
-      const wrapper = shallow(<Search text={sampleText}>{renderFn}</Search>);
-      wrapper.instance().updateText(sampleText);
-      expect(wrapper.state('text')).toBe(sampleText);
-    });
   });
 });

@@ -1,0 +1,290 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ReservationsScreen> Structure renders correctly 1`] = `
+<SafeAreaView
+  style={
+    Object {
+      "backgroundColor": "#F4F4F4",
+      "flex": 1,
+    }
+  }
+>
+  <StickyCard>
+    <Row>
+      <Search>
+        <Component />
+      </Search>
+    </Row>
+    <Row
+      style={
+        Object {
+          "marginBottom": 10,
+        }
+      }
+    >
+      <Icon
+        allowFontScaling={false}
+        color="#595959"
+        name="filter-list"
+        size={24}
+      />
+      <Label
+        textStyle={
+          Object {
+            "color": "#595959",
+            "marginLeft": 10,
+          }
+        }
+        title="search"
+      />
+      <Picker
+        itemStyle={
+          Object {
+            "borderTopColor": "transparent",
+            "color": "#595959",
+            "fontFamily": "AvenirNext-Regular",
+            "fontSize": 14,
+            "height": 36,
+          }
+        }
+        mode="dialog"
+        onValueChange={[Function]}
+        selectedValue="name"
+        style={
+          Object {
+            "backgroundColor": "#F4F4F4",
+            "borderRadius": 4,
+            "marginLeft": 10,
+            "width": 200,
+          }
+        }
+      >
+        <PickerItem
+          key="0"
+          label="guest name"
+          value="name"
+        />
+        <PickerItem
+          key="1"
+          label="in guest names"
+          value="name_contains"
+        />
+        <PickerItem
+          key="3"
+          label="name starts with"
+          value="name_starts_with"
+        />
+        <PickerItem
+          key="4"
+          label="hotel name"
+          value="hotelName"
+        />
+        <PickerItem
+          key="5"
+          label="in hotel names"
+          value="hotelName_contains"
+        />
+        <PickerItem
+          key="7"
+          label="hotel names start with"
+          value="hotelName_starts_with"
+        />
+        <PickerItem
+          key="9"
+          label="arrival date"
+          value="arrivalDate"
+        />
+        <PickerItem
+          key="10"
+          label="departure date"
+          value="departureDate"
+        />
+      </Picker>
+    </Row>
+  </StickyCard>
+  <Query
+    query={
+      Object {
+        "definitions": Array [
+          Object {
+            "directives": Array [],
+            "kind": "OperationDefinition",
+            "name": Object {
+              "kind": "Name",
+              "value": "Reservations",
+            },
+            "operation": "query",
+            "selectionSet": Object {
+              "kind": "SelectionSet",
+              "selections": Array [
+                Object {
+                  "alias": undefined,
+                  "arguments": Array [
+                    Object {
+                      "kind": "Argument",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "where",
+                      },
+                      "value": Object {
+                        "kind": "Variable",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "where",
+                        },
+                      },
+                    },
+                    Object {
+                      "kind": "Argument",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "first",
+                      },
+                      "value": Object {
+                        "kind": "IntValue",
+                        "value": "20",
+                      },
+                    },
+                    Object {
+                      "kind": "Argument",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "skip",
+                      },
+                      "value": Object {
+                        "kind": "Variable",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "skip",
+                        },
+                      },
+                    },
+                  ],
+                  "directives": Array [],
+                  "kind": "Field",
+                  "name": Object {
+                    "kind": "Name",
+                    "value": "reservations",
+                  },
+                  "selectionSet": Object {
+                    "kind": "SelectionSet",
+                    "selections": Array [
+                      Object {
+                        "alias": undefined,
+                        "arguments": Array [],
+                        "directives": Array [],
+                        "kind": "Field",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "id",
+                        },
+                        "selectionSet": undefined,
+                      },
+                      Object {
+                        "alias": undefined,
+                        "arguments": Array [],
+                        "directives": Array [],
+                        "kind": "Field",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "hotelName",
+                        },
+                        "selectionSet": undefined,
+                      },
+                      Object {
+                        "alias": undefined,
+                        "arguments": Array [],
+                        "directives": Array [],
+                        "kind": "Field",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "name",
+                        },
+                        "selectionSet": undefined,
+                      },
+                      Object {
+                        "alias": undefined,
+                        "arguments": Array [],
+                        "directives": Array [],
+                        "kind": "Field",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "departureDate",
+                        },
+                        "selectionSet": undefined,
+                      },
+                      Object {
+                        "alias": undefined,
+                        "arguments": Array [],
+                        "directives": Array [],
+                        "kind": "Field",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "arrivalDate",
+                        },
+                        "selectionSet": undefined,
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+            "variableDefinitions": Array [
+              Object {
+                "defaultValue": undefined,
+                "directives": Array [],
+                "kind": "VariableDefinition",
+                "type": Object {
+                  "kind": "NamedType",
+                  "name": Object {
+                    "kind": "Name",
+                    "value": "ReservationWhereInput",
+                  },
+                },
+                "variable": Object {
+                  "kind": "Variable",
+                  "name": Object {
+                    "kind": "Name",
+                    "value": "where",
+                  },
+                },
+              },
+              Object {
+                "defaultValue": undefined,
+                "directives": Array [],
+                "kind": "VariableDefinition",
+                "type": Object {
+                  "kind": "NamedType",
+                  "name": Object {
+                    "kind": "Name",
+                    "value": "Int",
+                  },
+                },
+                "variable": Object {
+                  "kind": "Variable",
+                  "name": Object {
+                    "kind": "Name",
+                    "value": "skip",
+                  },
+                },
+              },
+            ],
+          },
+        ],
+        "kind": "Document",
+        "loc": Object {
+          "end": 209,
+          "start": 0,
+        },
+      }
+    }
+    variables={
+      Object {
+        "where": Object {},
+      }
+    }
+  >
+    <Component />
+  </Query>
+</SafeAreaView>
+`;

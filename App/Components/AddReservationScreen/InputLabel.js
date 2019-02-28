@@ -8,7 +8,7 @@ import styles from './Styles/InputLabelStyles';
   type Props = {
     containerStyle?: Object,
     label?: string,
-    styles: Object,
+    styles?: Object,
   };
 
 export default function InputLabel(props: Props) {
@@ -28,4 +28,5 @@ export default function InputLabel(props: Props) {
 InputLabel.defaultProps = {
   containerStyle: undefined,
   label: 'add a label',
+  styles: undefined,
 };

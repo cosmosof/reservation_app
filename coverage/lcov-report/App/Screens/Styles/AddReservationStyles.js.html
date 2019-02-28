@@ -1,14 +1,14 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for App/Constants/Fonts.js</title>
+    <title>Code coverage report for App/Screens/Styles/AddReservationStyles.js</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../../prettify.css" />
-    <link rel="stylesheet" href="../../base.css" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style type='text/css'>
         .coverage-summary .sorter {
-            background-image: url(../../sort-arrow-sprite.png);
+            background-image: url(../../../sort-arrow-sprite.png);
         }
     </style>
 </head>
@@ -16,18 +16,18 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="../../index.html">All files</a> / <a href="index.html">App/Constants</a> Fonts.js
+      <a href="../../../index.html">All files</a> / <a href="index.html">App/Screens/Styles</a> AddReservationStyles.js
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>9/9</span>
+        <span class='fraction'>6/6</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">50% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/0</span>
+        <span class='fraction'>3/6</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -37,7 +37,7 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>7/7</span>
+        <span class='fraction'>4/4</span>
       </div>
     </div>
     <p class="quiet">
@@ -122,16 +122,16 @@
 <a name='L74'></a><a href='#L74'>74</a>
 <a name='L75'></a><a href='#L75'>75</a>
 <a name='L76'></a><a href='#L76'>76</a>
-<a name='L77'></a><a href='#L77'>77</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">13x</span>
+<a name='L77'></a><a href='#L77'>77</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -142,7 +142,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -156,7 +155,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -191,89 +189,91 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const type = {
-  base: 'Avenir-Book',
-  bold: 'Avenir-Black',
-  emphasis: 'HelveticaNeue-Italic',
-};
-const typeAndroid = {
-  base: 'sans-serif',
-  condensed: 'sans-serif-condensed',
-};
-const typeIOS = {
-  base: 'AvenirNext-Regular',
-  bold: 'Avenir-Black',
-  semiBold: 'AvenirNext-DemiBold',
-  condensed: 'AvenirNextCondensed-DemiBold',
-  emphasis: 'HelveticaNeue-Italic',
-  medium: 'AvenirNextCondensed-Regular',
-  cbold: 'AvenirNextCondensed-Bold',
-  light: 'AvenirNextCondensed-UltraLight',
-  papyrusCondensed: 'Papyrus-Condensed',
-};
-const size = {
-  h1: 38,
-  h2: 34,
-  h3: 30,
-  h4: 26,
-  h5: 20,
-  h6: 19,
-  input: 18,
-  regular: 17,
-  medium: 14,
-  small: 12,
-  tiny: 8.5,
-};
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import {StyleSheet, Platform} from 'react-native';
+import {Colors, Fonts} from '../../Constants';
 &nbsp;
-const style = {
-  h1: {
-    fontFamily: type.base,
-    fontSize: size.h1,
+export default StyleSheet.create({
+  border: {
+    borderWidth: StyleSheet.hairlineWidth,
+    borderColor: Colors.steel,
+    borderRadius: 2,
   },
-  h2: {
-    fontWeight: 'bold',
-    fontSize: size.h2,
+  button: {
+    alignSelf: 'center',
+    backgroundColor: Colors.vividBlue,
+    borderColor: Colors.lighterMatBlue,
+    borderRadius: 4,
+    height: 40,
+    marginBottom: 40,
+    width: 130,
   },
-  h3: {
-    fontFamily: type.emphasis,
-    fontSize: size.h3,
+  buttonTitleStyle: {
+    fontFamily: Platform.OS == 'ios' ? Fonts.typeIOS.condensed : Fonts.typeAndroid.conden<span class="branch-1 cbranch-no" title="branch not covered" >sed,</span>
+    fontSize: 16,
   },
-  h4: {
-    fontFamily: type.base,
-    fontSize: size.h4,
+  container: {
+    backgroundColor: Colors.extraLightGray,
+    paddingTop: 10,
+    flex: 1,
   },
-  h5: {
-    fontFamily: type.base,
-    fontSize: size.h5,
+  dateInput: {
+    backgroundColor: 'white',
+    borderRadius: 5,
+    borderColor: 'transparent',
   },
-  h6: {
-    fontFamily: type.emphasis,
-    fontSize: size.h6,
+  dateText: {
+    color: Colors.coal,
+    textAlign: 'left',
   },
-  normal: {
-    fontFamily: type.base,
-    fontSize: size.regular,
+  disabled: {
+    backgroundColor: Colors.disabledBackground,
   },
-  description: {
-    fontFamily: type.base,
-    fontSize: size.medium,
+  errorText: {
+    alignSelf: 'flex-start',
+    color: Colors.pastelRed,
+    fontSize: 14,
+    fontWeight: '400',
+    padding: 5,
   },
-};
-&nbsp;
-export default {
-  type,
-  size,
-  style,
-  typeAndroid,
-  typeIOS,
-};
+  inputColumn: {
+    flexDirection: 'column',
+  },
+  inputRow: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    marginBottom: 10,
+  },
+  inputStyle: {
+    height: 40,
+    width: 220,
+  },
+  KeyboardAvoidingViewContainer: {
+    flex: 1,
+    justifyContent: 'center',
+  },
+  navbarHeader: {
+    color: Colors.darkMatBlue2,
+    fontSize: 18,
+    fontWeight: '600',
+    fontFamily: Platform.OS == 'ios' ? Fonts.typeIOS.condensed : Fonts.typeAndroid.conden<span class="branch-1 cbranch-no" title="branch not covered" >sed,</span>
+    paddingLeft: Platform.OS == 'ios' ? 0 : 10,<span class="branch-1 cbranch-no" title="branch not covered" ></span>
+  },
+  placeholderText: {
+    color: Colors.disabledTextColor,
+  },
+  row: {
+    backgroundColor: 'transparent',
+  },
+});
 &nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
@@ -283,7 +283,7 @@ export default {
   generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Feb 28 2019 07:02:16 GMT-0500 (Eastern Standard Time)
 </div>
 </div>
-<script src="../../prettify.js"></script>
+<script src="../../../prettify.js"></script>
 <script>
 window.onload = function () {
         if (typeof prettyPrint === 'function') {
@@ -291,7 +291,7 @@ window.onload = function () {
         }
 };
 </script>
-<script src="../../sorter.js"></script>
-<script src="../../block-navigation.js"></script>
+<script src="../../../sorter.js"></script>
+<script src="../../../block-navigation.js"></script>
 </body>
 </html>
